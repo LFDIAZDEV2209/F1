@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 - Personaliza tu Auto</title>
+    <link rel="stylesheet" href="../src/css/car-customizer.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>F1 GARAGE</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#" class="active">Personalizar Auto</a></li>
+                <li><a href="#">Mis Autos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="customizer-section">
+                <h2>Personaliza tu Auto F1</h2>
+                
+                <div class="car-preview">
+                    <div class="car-container">
+                        <div class="f1-car">
+                            <div class="car-part body" id="car-body"></div>
+                            <div class="car-part front-wing"></div>
+                            <div class="car-part rear-wing"></div>
+                            <div class="car-part cockpit"></div>
+                            <div class="car-part wheel front-left"></div>
+                            <div class="car-part wheel front-right"></div>
+                            <div class="car-part wheel rear-left"></div>
+                            <div class="car-part wheel rear-right"></div>
+                            <div class="car-part detail-1"></div>
+                            <div class="car-part detail-2"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="customization-options">
+                    <div class="form-group">
+                        <label for="car-name">Nombre del Auto:</label>
+                        <input type="text" id="car-name" placeholder="Mi Auto F1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="primary-color">Color Principal:</label>
+                        <input type="color" id="primary-color" value="#E10600">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="secondary-color">Color Secundario:</label>
+                        <input type="color" id="secondary-color" value="#000000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="accent-color">Color de Detalles:</label>
+                        <input type="color" id="accent-color" value="#FFFFFF">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sponsor">Patrocinador Principal:</label>
+                        <select id="sponsor">
+                            <option value="none">Ninguno</option>
+                            <option value="racing">Racing Team</option>
+                            <option value="velocity">Velocity Energy</option>
+                            <option value="turbo">Turbo Racing</option>
+                            <option value="speedx">SpeedX</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="car-number">Número del Auto:</label>
+                        <input type="number" id="car-number" min="1" max="99" value="1">
+                    </div>
+                    
+                    <div class="buttons">
+                        <button id="save-car" class="btn btn-primary">Guardar Auto</button>
+                        <button id="reset-car" class="btn btn-secondary">Restablecer</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="saved-cars-section">
+                <h2>Mis Autos Guardados</h2>
+                <div id="saved-cars-list" class="saved-cars-container">
+                    <!-- Los autos guardados se mostrarán aquí dinámicamente -->
+                    <div class="no-cars-message">No tienes autos guardados todavía.</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal para editar autos -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Editar Auto</h3>
+            <div class="form-group">
+                <label for="edit-car-name">Nombre del Auto:</label>
+                <input type="text" id="edit-car-name">
+            </div>
+            
+            <div class="form-group">
+                <label for="edit-primary-color">Color Principal:</label>
+                <input type="color" id="edit-primary-color">
+            </div>
+            
+            <div class="form-group">
+                <label for="edit-secondary-color">Color Secundario:</label>
+                <input type="color" id="edit-secondary-color">
+            </div>
+            
+            <div class="form-group">
+                <label for="edit-accent-color">Color de Detalles:</label>
+                <input type="color" id="edit-accent-color">
+            </div>
+            
+            <div class="form-group">
+                <label for="edit-sponsor">Patrocinador Principal:</label>
+                <select id="edit-sponsor">
+                    <option value="none">Ninguno</option>
+                    <option value="racing">Racing Team</option>
+                    <option value="velocity">Velocity Energy</option>
+                    <option value="turbo">Turbo Racing</option>
+                    <option value="speedx">SpeedX</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="edit-car-number">Número del Auto:</label>
+                <input type="number" id="edit-car-number" min="1" max="99">
+            </div>
+            
+            <div class="buttons">
+                <button id="update-car" class="btn btn-primary">Actualizar Auto</button>
+                <button id="cancel-edit" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal de confirmación para eliminar -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content delete-confirmation">
+            <h3>¿Estás seguro?</h3>
+            <p>¿Realmente deseas eliminar este auto? Esta acción no se puede deshacer.</p>
+            <div class="buttons">
+                <button id="confirm-delete" class="btn btn-danger">Eliminar</button>
+                <button id="cancel-delete" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="car-customizer.js"></script>
+</body>
+</html>
