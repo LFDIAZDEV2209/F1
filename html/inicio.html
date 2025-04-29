@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula 1 - Bienvenido</title>
+    <link rel="stylesheet" href="inicio.css">
+</head>
+<body>
+    <div class="trailer-container">
+        <!-- Logo de F1 -->
+        <img src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/5.5.2/collection/components/icon/svg/f1.svg" alt="F1 Logo" class="f1-logo">
+        
+        <!-- Simulación de carrera -->
+        <div class="race-container">
+            <div class="race-track"></div>
+            <!-- Líneas de la pista -->
+            <div class="track-line" style="top: -100px;"></div>
+            <div class="track-line" style="top: -300px;"></div>
+            <div class="track-line" style="top: -500px;"></div>
+            <div class="track-line" style="top: -700px;"></div>
+            
+            <!-- Carro de F1 -->
+            <div class="car"></div>
+            
+            <!-- Efecto de iluminación -->
+            <div class="light"></div>
+        </div>
+        
+        <!-- Botón de comenzar -->
+        <button class="start-button">Comenzar</button>
+        
+        <!-- Selección de tipo de usuario -->
+        <div class="user-selection">
+            <h2 class="selection-title">Selecciona tu perfil</h2>
+            <div class="user-type-buttons">
+                <button class="user-type-btn" data-type="usuario">Usuario</button>
+                <button class="user-type-btn" data-type="admin">Administrador</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="inicio.js"></script>
+</body>
+</html>
