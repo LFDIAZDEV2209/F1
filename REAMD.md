@@ -17,16 +17,16 @@ Frontend:
 🌐 HTML5 y CSS3
 🔄 JavaScript (ES6+)
 🧩 Web Components
-🗄️ Almacenamiento local (LocalStorage)
+🗄️ Almacenamiento local (LocalStorage).
 
 
 
 🔍 Funcionalidades
-👨‍🔧 Gestión de Equipos y Pilotos
+👨‍🔧 Gestión de Equipos y Pilotos.
 
 ✏️ Registro, edición y eliminación de equipos y pilotos
 👁️ Consulta de información detallada de pilotos y equipos
-📊 Visualización de estadísticas de rendimiento
+📊 Visualización de estadísticas de rendimiento.
 
 🚗 Gestión de Vehículos
 
