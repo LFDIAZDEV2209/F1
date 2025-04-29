@@ -97,8 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (user) {
                 localStorage.setItem('userToken', 'fake-token-' + user.username);
                 localStorage.setItem('userData', JSON.stringify(user));
-                alert('¡Inicio de sesión exitoso! Bienvenido/a ' + user.firstName + ' ' + user.lastName);
-                userModal.style.display = 'none';
+                window.location.href = "entrada.html"
             } else {
                 alert('Credenciales incorrectas');
             }
