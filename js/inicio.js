@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos
+    
     const video = document.getElementById('videoBackground');
     const overlay = document.getElementById('overlay');
     const btnEnter = document.getElementById('btnEnter');
@@ -14,13 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeRegisterModal = document.getElementById('closeRegisterModal');
     const registerLink = document.getElementById('registerLink');
     
-    // Iniciar reproducción del video
+    
+    const ADMIN_USERNAME = 'yarith1102@gmail.com';
+    const ADMIN_PASSWORD = '1234567';
+    
+    
     video.play();
     
-    // Mostrar el overlay al cargar la página
+    
     overlay.style.opacity = '1';
     
-    // Contador para mostrar el botón "ENTRAR" después de 25 segundos
+    
     setTimeout(function() {
         btnEnter.style.display = 'block';
         setTimeout(function() {
@@ -28,15 +32,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }, 25000);
     
-    // Evento cuando termina el video (28 segundos)
+   
     video.addEventListener('ended', function() {
-        // Si el usuario no ha hecho clic en "ENTRAR", mostrar las opciones de login
+        
         if (loginOptions.style.display !== 'flex') {
             showLoginOptions();
         }
     });
     
-    // Mostrar opciones de login al hacer clic en "ENTRAR"
+    
     btnEnter.addEventListener('click', showLoginOptions);
     
     function showLoginOptions() {
@@ -47,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     }
     
-    // Eventos para mostrar modals
+    
     userLogin.addEventListener('click', function() {
         userModal.style.display = 'flex';
     });
@@ -62,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         registerModal.style.display = 'flex';
     });
     
-    // Eventos para cerrar modals
+
     closeUserModal.addEventListener('click', function() {
         userModal.style.display = 'none';
     });
@@ -75,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         registerModal.style.display = 'none';
     });
     
-    // Cerrar modals al hacer clic fuera de ellos
+
     window.addEventListener('click', function(e) {
         if (e.target === userModal) {
             userModal.style.display = 'none';
@@ -88,29 +92,85 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Validación de formularios
     document.getElementById('userForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
         
         if (username && password) {
-            alert('¡Inicio de sesión como usuario exitoso!');
-            userModal.style.display = 'none';
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Cargando...';
+            submitBtn.disabled = true;
+            
+            // Autenticación con la API
+            fetch('https://dummyjson.com/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: username,
+                    password: password,
+                    expiresInMins: 30
+                }),
+                credentials: 'include'
+            })
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error('Credenciales incorrectas');
+                }
+                return res.json();
+            })
+            .then(data => {
+                
+                localStorage.setItem('userToken', data.token);
+                localStorage.setItem('userData', JSON.stringify(data));
+                
+                
+                alert('¡Inicio de sesión exitoso! Bienvenido/a ' + data.firstName + ' ' + data.lastName);
+                
+                
+                userModal.style.display = 'none';
+            })
+            .catch(error => {
+                
+                alert('Error: ' + error.message);
+            })
+            .finally(() => {
+            
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         }
     });
     
+    // Validación de formulario de administrador
     document.getElementById('adminForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const adminUsername = document.getElementById('adminUsername').value;
         const adminPassword = document.getElementById('adminPassword').value;
         
         if (adminUsername && adminPassword) {
-            alert('¡Inicio de sesión como administrador exitoso!');
-            adminModal.style.display = 'none';
+            // Verificar credenciales fijas
+            if (adminUsername === ADMIN_USERNAME && adminPassword === ADMIN_PASSWORD) {
+                // Guardar información en localStorage
+                localStorage.setItem('isAdmin', true);
+                
+                // Mostrar mensaje de éxito
+                alert('¡Inicio de sesión como administrador exitoso!');
+                
+                // Redirigir al panel de administrador (puedes cambiar la URL)
+                // window.location.href = 'admin-dashboard.html';
+                
+                // Ocultar modal
+                adminModal.style.display = 'none';
+            } else {
+                alert('Credenciales de administrador incorrectas');
+            }
         }
     });
     
+    // Formulario de registro
     document.getElementById('registerForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const newUsername = document.getElementById('newUsername').value;
@@ -124,8 +184,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         if (newUsername && email && newPassword) {
-            alert('¡Registro exitoso! Ahora puedes iniciar sesión.');
-            registerModal.style.display = 'none';
+            // Mostrar indicador de carga
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Cargando...';
+            submitBtn.disabled = true;
+            
+            // Simular registro (en una aplicación real, esto sería un endpoint de registro)
+            // En DummyJSON no hay endpoint de registro real, así que mostramos mensaje de éxito
+            setTimeout(() => {
+                alert('¡Registro exitoso! Ahora puedes iniciar sesión con tus credenciales.');
+                
+                // Limpiar formulario
+                this.reset();
+                
+                // Ocultar modal de registro y mostrar modal de inicio de sesión
+                registerModal.style.display = 'none';
+                userModal.style.display = 'flex';
+                
+                // Restaurar botón
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         }
     });
 });
