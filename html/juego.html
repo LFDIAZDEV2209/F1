@@ -14,6 +14,7 @@
 
     <style>
       body {
+        margin-top: 20px;
         background: #222;
         font-family: "Press Start 2P", monospace;
         font-smooth: never;
@@ -257,38 +258,37 @@
           RUMBLE: ["#959298", "#f5f2f6"],
           GRASS: ["#eedccd", "#e6d4c5"],
         },
-        
+
         IMAGE: {
           TREE: {
-            src: "tree.png",
+            src: "../img/tree.png",
             width: 132,
             height: 192,
           },
-          
+
           HERO: {
-            src: "hero.png",
+            src: "../img/hero.png",
             width: 110,
             height: 56,
           },
-          
+
           CAR: {
-            src: "car04.png",
+            src: "../img/car04.png",
             width: 50,
             height: 36,
           },
-          
+
           FINISH: {
-            src: "finish.png",
+            src: "../img/finish.png",
             width: 339,
             height: 180,
             offset: -0.5,
           },
-          
+
           SKY: {
-            src: "cloud.jpg", 
+            src: "../img/sky.png",
           },
         },
-      }
 
         AUDIO: {
           theme:
@@ -516,7 +516,7 @@
         C: 1.2,
       };
 
-      const mapLength = 15000;
+      const mapLength = 1500;
 
       // loop
       let then = timestamp();
