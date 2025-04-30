@@ -105,6 +105,53 @@ body {
     border-top: 8px solid var(--primary-color);
 }
 
+   /* Simulación de fuente F1, puedes sustituir por la oficial si la tienes */
+   @font-face {
+    font-family: 'Formula1';
+    src: url('https://cdn.jsdelivr.net/gh/f1laps/fonts/f1regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .header-bar {
+    height: 10px;
+    background-color: #000;
+    position: relative;
+  }
+
+  .header-bar::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 10px;
+    background-color: white;
+    clip-path: polygon(100% 0%, 100% 100%, 60% 100%);
+  }
+
+  .main-title {
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px 40px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-title span {
+    color: #000;
+  }
+
+  .subtitle {
+    background-color: #efefef;
+    padding: 15px 40px;
+    font-size: 16px;
+    color: #333;
+    border-radius: 10px;
+    margin: 0 40px;
+  }
+
 .pilotos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -139,7 +186,7 @@ body {
     background-color: white;
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-image: conic-gradient(transparent, #00ccffc2, transparent 30%);
+    background-image: conic-gradient(transparent, #000000, #2c2c2c, #7f7f7f, #ff0000, transparent 30%);
     animation: rotate 4s linear infinite;
 }
 
@@ -246,3 +293,62 @@ body {
     line-height: 1;
     opacity: 0.9;
 }
+@keyframes f1Gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+.driver-number {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 1;
+    opacity: 0.95;
+
+        
+    background: linear-gradient(
+        120deg,
+        #ff0000,
+        #7f7f7f,
+        #ffffff,
+        #000000,
+        #ff0000
+    );
+    background-size: 200% 200%;
+    animation: f1Gradient 3s linear infinite;
+
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.card {
+    width: 250px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+  }
+  
+  .info-detalle {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f8f8f8;
+    max-width: 600px;
+  }
+  
+  .imagen-piloto {
+    width: 100%;
+  }
+  
+  .info-detalle img {
+    width: 200px;
+  }
+  
