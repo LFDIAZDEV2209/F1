@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personalizador de Auto 3D</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div id="controls">
+    <label for="colorPicker">Color del Auto:</label>
+    <input type="color" id="colorPicker" value="#ffffff" />
+    <br>
+    <label for="wheelSize">Tamaño de llantas:</label>
+    <input type="range" id="wheelSize" min="0.5" max="2" step="0.1" value="1" />
+  </div>
+  <canvas id="carCanvas"></canvas>
+
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
