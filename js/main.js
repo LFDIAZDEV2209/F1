@@ -82,5 +82,5 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
-loader.load('../models/2021_lamborghini_countach_lpi_800-4.glb', (gltf) => {
-
+loader.load('../models/models.dbl', (gltf) => {
+})
