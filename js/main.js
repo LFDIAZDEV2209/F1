@@ -7,7 +7,10 @@ const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerH
 camera.position.set(4, 2, 6);
 
 // Renderizado
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('carCanvas'), antialias: true });
+const renderer = new THREE.WebGLRenderer({ 
+  canvas: document.getElementById('carCanvas'), 
+  antialias: true 
+});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -26,16 +29,21 @@ const controls = {
 
 // Cargar modelo GLB
 const loader = new GLTFLoader();
-loader.load('../models/car.glb', (gltf) => {
+loader.load('../models/models.glb', (gltf) => {
   car = gltf.scene;
   scene.add(car);
-
-  // Mostrar nombres de partes del modelo
+  
+  // Mostrar nombres de partes del modelo para debug
+  console.log('Modelo cargado correctamente');
   car.traverse((child) => {
     if (child.isMesh) {
       console.log('Parte encontrada:', child.name);
     }
   });
+  
+  // Aplicar configuraciones iniciales
+  updateCarMaterial();
+  updateWheelScale();
 });
 
 // Eventos de interfaz
@@ -72,6 +80,9 @@ function updateWheelScale() {
 // Animación
 function animate() {
   requestAnimationFrame(animate);
+  if (car) {
+    car.rotation.y += 0.005; // Para hacer que el auto gire lentamente
+  }
   renderer.render(scene, camera);
 }
 animate();
@@ -82,5 +93,3 @@ window.addEventListener('resize', () => {
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
-loader.load('../models/models.dbl', (gltf) => {
-})
