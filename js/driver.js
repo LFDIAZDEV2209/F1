@@ -1,13 +1,20 @@
 async function loadDrivers(query = "") {
-    searchInputLoadingIcon.classList.remove('hidden');
+  searchInputLoadingIcon.classList.remove("hidden");
   try {
-    const response = await fetch("/api/driver.json");
+    const [driversResponse, countriesResponse] = await Promise.all([
+      fetch("/api/driver.json"),
+      fetch("/api/country.json"),
+    ]);
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+    if (!driversResponse.ok || !countriesResponse.ok) {
+      throw new Error("Error en la carga de datos");
     }
 
-    const driversData = await response.json();
+    const [driversData, countriesData] = await Promise.all([
+      driversResponse.json(),
+      countriesResponse.json(),
+    ]);
+
     const container = document.getElementById("cards-container");
     container.innerHTML = ""; // Limpiar contenedor
 
@@ -17,20 +24,18 @@ async function loadDrivers(query = "") {
     );
 
     filteredDrivers.forEach((driver) => {
+      const countryData = countriesData.find((country) => country.id === driver.country);
+      
       const card = document.createElement("driver-card");
+      card.setAttribute("id", driver.id);
+      card.setAttribute("name", driver.name);
+      card.setAttribute("last-name", driver.lastName);
+      card.setAttribute("points", driver.points);
+      card.setAttribute("team", driver.team);
+      card.setAttribute("image-url", driver.imageUrl);
+      card.setAttribute("driver-number", driver.driverNumber);
+      card.setAttribute("flag", countryData ? countryData.flag : "/img/flags/colombia.jpg");
 
-      const driverData = {
-        id: driver.id,
-        points: driver.points,
-        name: driver.name,
-        lastName: driver.lastName,
-        team: driver.team,
-        imageUrl: driver.imageUrl,
-        driverNumber: driver.driverNumber,
-        flag: driver.flag,
-      };
-
-      card.setAttribute("data", JSON.stringify(driverData));
       container.appendChild(card);
     });
 
@@ -44,7 +49,7 @@ async function loadDrivers(query = "") {
     container.innerHTML =
       '<p class="error-message">Error al cargar los datos de los pilotos. Por favor intenta nuevamente más tarde.</p>';
   } finally {
-    searchInputLoadingIcon.classList.add('hidden');
+    searchInputLoadingIcon.classList.add("hidden");
   }
 }
 

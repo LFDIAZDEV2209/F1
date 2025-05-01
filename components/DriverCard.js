@@ -5,7 +5,17 @@ class DriverCard extends HTMLElement {
     }
 
     connectedCallback() {
-        const data = JSON.parse(this.getAttribute("data"));
+        const data = {
+            id: this.getAttribute("id"),
+            name: this.getAttribute("name"),
+            lastName: this.getAttribute("last-name"),
+            points: this.getAttribute("points"),
+            team: this.getAttribute("team"),
+            imageUrl: this.getAttribute("image-url"),
+            driverNumber: this.getAttribute("driver-number"),
+            flag: this.getAttribute("flag")
+        };
+        
         this.shadowRoot.innerHTML = `
          <link rel="stylesheet" href="/css/driver.css">
             <div class="card">

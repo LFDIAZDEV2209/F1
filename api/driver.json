@@ -6,7 +6,7 @@
         "imageUrl": "/img/piastri.avif",
         "team": "McLaren",
         "driverNumber": 81,
-        "flag": "/img/australia.jpeg",
+        "country": 1,
         "points": 95
     },
     {
@@ -16,7 +16,7 @@
         "imageUrl": "/img/norris.avif",
         "team": "McLaren",
         "driverNumber": 4,
-        "flag": "/img/reinounido.jpeg",
+        "country": 2,
         "points": 85
     },
     {
@@ -26,7 +26,7 @@
         "imageUrl": "/img/verstappen.avif",
         "team": "Red Bull Racing",
         "driverNumber": 1,
-        "flag": "/img/nederlands.jpeg",
+        "country": 3,
         "points": 70
     },
     {
@@ -36,7 +36,7 @@
         "imageUrl": "/img/russell.avif",
         "team": "Mercedes",
         "driverNumber": 63,
-        "flag": "/img/reinounido.jpeg",
+        "country": 2,
         "points": 75
     },
     {
@@ -46,7 +46,7 @@
         "imageUrl": "/img/leclerc.avif",
         "team": "ferrari",
         "driverNumber": 16,
-        "flag": "/img/polonia.jpeg",
+        "country": 4,
         "points": 20
     },
     {
@@ -56,7 +56,7 @@
         "imageUrl": "/img/antonelli.avif",
         "team": "Mercedes",
         "driverNumber": 12,
-        "flag": "/img/italia.jpeg",
+        "country": 5,
         "points": 90
     },
     {
@@ -66,7 +66,7 @@
         "imageUrl": "/img/hamilton.avif",
         "team": "ferrari",
         "driverNumber": 44,
-        "flag": "/img/reinounido.jpeg",
+        "country": 2,
         "points": 15
     },
     {
@@ -76,7 +76,7 @@
         "imageUrl": "/img/albo.webp",
         "team": "Williams",
         "driverNumber": 23,
-        "flag": "/img/tailandia.jpeg",
+        "country": 6,
         "points": 27
     },
     {
@@ -86,7 +86,7 @@
         "imageUrl": "/img/ocon.avif",
         "team": "Haas",
         "driverNumber": 31,
-        "flag": "/img/francia.jpeg",
+        "country": 7,
         "points": 49
     },
     {
@@ -96,7 +96,7 @@
         "imageUrl": "/img/stroll.webp",
         "team": "Aston Martin",
         "driverNumber": 18,
-        "flag": "/img/canada.jpeg",
+        "country": 8,
         "points": 79
     },
     {
@@ -106,7 +106,7 @@
         "imageUrl": "/img/gasly.avif",
         "team": "Alpine",
         "driverNumber": 10,
-        "flag": "/img/francia.jpeg",
+        "country": 7,
         "points": 15
     },
     {
@@ -116,7 +116,7 @@
         "imageUrl": "/img/hulkenberg.avif",
         "team": "Kick Sauber",
         "driverNumber": 27,
-        "flag": "/img/germanya.jpeg",
+        "country": 9,
         "points": 50
     },
     {
@@ -126,7 +126,7 @@
         "imageUrl": "/img/oliver.avif",
         "team": "haas",
         "driverNumber": 87,
-        "flag": "/img/reinounido.jpeg",
+        "country": 2,
         "points": 5
     },
     {
@@ -136,7 +136,7 @@
         "imageUrl": "/img/isack.avif",
         "team": "racing bulls",
         "driverNumber": 6,
-        "flag": "/img/francia.jpeg",
+        "country": 7,
         "points": 91
     },
     {
@@ -146,7 +146,7 @@
         "imageUrl": "/img/sainz.avif",
         "team": "Williams",
         "driverNumber": 55,
-        "flag": "/img/españa.jpeg",
+        "country": 10,
         "points": 78
     },
     {
@@ -156,7 +156,7 @@
         "imageUrl": "/img/tsunoda.avif",
         "team": "Red Bull Racing",
         "driverNumber": 22,
-        "flag": "/img/japon.jpeg",
+        "country": 11,
         "points": 77
     },
     {
@@ -166,7 +166,7 @@
         "imageUrl": "/img/alonso.avif",
         "team": "Aston Martin",
         "driverNumber": 14,
-        "flag": "/img/españa.jpeg",
+        "country": 10,
         "points": 27
     },
     {
@@ -176,7 +176,7 @@
         "imageUrl": "/img/lawson.avif",
         "team": "Racing Bulls",
         "driverNumber": 30,
-        "flag": "/img/australia.jpeg",
+        "country": 1,
         "points": 93
     },
     {
@@ -186,7 +186,7 @@
         "imageUrl": "/img/Jack_Doohan.webp",
         "team": "Alpine",
         "driverNumber": 7,
-        "flag": "/img/australia.jpeg",
+        "country": 1,
         "points": 13
     },
     {
@@ -196,7 +196,7 @@
         "imageUrl": "/img/bortoleto.avif",
         "team": "Kick Sauber",
         "driverNumber": 5,
-        "flag": "/img/brasil.jpeg",
+        "country": 12,
         "points": 100
     }
 ]

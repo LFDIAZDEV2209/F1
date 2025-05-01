@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Australia",
+        "flag": "/img/flags/australia.jpeg"
+    },
+    {
+        "id": 2,
+        "name": "Reino unido",
+        "flag": "/img/flags/reino-unido.jpeg"
+    },
+    {
+        "id": 3,
+        "name": "Países Bajos",
+        "flag": "/img/flags/paises-bajos.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "Polonia",
+        "flag": "/img/flags/polonia.jpeg"
+    },
+    {
+        "id": 5,
+        "name": "Italia",
+        "flag": "/img/flags/italia.jpeg"
+    },
+    {
+        "id": 6,
+        "name": "Tailandia",
+        "flag": "/img/flags/tailandia.jpeg"
+    },
+    {
+        "id": 7,
+        "name": "Francia",
+        "flag": "/img/flags/francia.jpeg"
+    },
+    {
+        "id": 8,
+        "name": "Canadá",
+        "flag": "/img/flags/canada.jpeg"
+    },
+    {
+        "id": 9,
+        "name": "Alemania",
+        "flag": "/img/flags/alemania.jpeg"
+    },
+    {
+        "id": 10,
+        "name": "España",
+        "flag": "/img/flags/españa.jpeg"
+    },
+    {
+        "id": 11,
+        "name": "Japón",
+        "flag": "/img/flags/japon.jpeg"
+    },
+    {
+        "id": 12,
+        "name": "Brasil",
+        "flag": "/img/flags/brasil.jpeg"
+    }
+]

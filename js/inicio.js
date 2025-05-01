@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (adminUsername === ADMIN_USERNAME && adminPassword === ADMIN_PASSWORD) {
             localStorage.setItem('isAdmin', true);
-            alert('¡Inicio de sesión como administrador exitoso!');
             adminModal.style.display = 'none';
+            window.location.href = "admin-entrada.html"
         } else {
             alert('Credenciales de administrador incorrectas');
         }

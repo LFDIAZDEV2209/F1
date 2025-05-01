@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "McLaren",
+        "country": "United Kingdom",
+        "motor": "Honda",
+        "pilots": [1,2],
+        "imageUrl": ""
+    },
+    {
+        "id": 1,
+        "name": "Red Bull Racing",
+        "country": "Austria",
+        "motor": "Honda",
+        "pilots": [1,2],
+        "imageUrl": ""
+    }
+]
