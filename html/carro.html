@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="module" rel="stylesheet" href="../css/carro.css"></script>
+</head>
+<body>
+    <script src="../libs/three.module.js"></script>
+    scri
+    <script>
+        let scene;
+
+        function init(){
+
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xdddddd);
+
+            camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 5000);
+
+            hlight = new THREE.AmbientLight(0x404040, 100);
+            scene.add(hlight);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true,});
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(renderer.domElement);
+        }
+
+    </script>
+</body>
+</html>
