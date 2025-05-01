@@ -7,7 +7,6 @@
       "powerUnit": "Renault",
       "chassis": "A525",
       "pilots": [11, 19],
-      "points": 20,
       "performanceSpecifications": {
         "speedMax": 340,
         "acceleration": 2.5,
@@ -23,7 +22,6 @@
       "powerUnit": "Ferrari",
       "chassis": "VF-25",
       "pilots": [9, 13],
-      "points": 25,
       "performanceSpecifications": {
         "speedMax": 320,
         "acceleration": 2.3,
@@ -39,7 +37,6 @@
       "powerUnit": "Mercedes",
       "chassis": "W16",
       "pilots": [4, 6],
-      "points": 111,
       "performanceSpecifications": {
         "speedMax": 330,
         "acceleration": 2.4,
@@ -55,7 +52,6 @@
       "powerUnit": "Mercedes",
       "chassis": "FW47",
       "pilots": [8, 15],
-      "points": 0,
       "performanceSpecifications": {
         "speedMax": 335,
         "acceleration": 2.2,
@@ -71,7 +67,6 @@
       "powerUnit": "Mercedes",
       "chassis": "AMR25",
       "pilots": [10, 17],
-      "points": 0,
       "performanceSpecifications": {
         "speedMax": 345,
         "acceleration": 2.4,
@@ -87,7 +82,6 @@
       "powerUnit": "Ferrari",
       "chassis": "C45",
       "pilots": [12, 20],
-      "points": 0,
       "performanceSpecifications": {
         "speedMax": 345,
         "acceleration": 2.4,
@@ -103,7 +97,6 @@
       "powerUnit": "Honda",
       "chassis": "VCARB-02",
       "pilots": [18, 14],
-      "points": 0,
       "performanceSpecifications": {
         "speedMax": 340,
         "acceleration": 2.7,
@@ -119,7 +112,6 @@
       "powerUnit": "Ferrari",
       "chassis": "SF-25",
       "pilots": [5, 7],
-      "points": 78,
       "performanceSpecifications": {
         "speedMax": 345,
         "acceleration": 2.6,
@@ -135,7 +127,6 @@
       "powerUnit": "Mercedes",
       "chassis": "MCL39",
       "pilots": [1, 2],
-      "points": 188,
       "performanceSpecifications": {
         "speedMax": 340,
         "acceleration": 2.7,
@@ -151,7 +142,6 @@
       "powerUnit": "Honda",
       "chassis": "RB21",
       "pilots": [3, 16],
-      "points": 89,
       "performanceSpecifications": {
         "speedMax": 345,
         "acceleration": 2.4,

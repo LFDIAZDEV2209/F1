@@ -9,17 +9,20 @@ export default class TeamCard extends HTMLElement {
     if (this.hasAttribute('team-data')) {
       try {
         const teamData = JSON.parse(this.getAttribute('team-data'));
+        
         this.render(teamData);
       } catch (error) {
-        console.error('Error parsing team data:', error);
+        console.error('Error parsing attributes:', error);
       }
     }
   }
-
   render(teamData) {
-    const position = this.getAttribute('position') || '';
     const driversData = this.getAttribute('drivers-data') ? JSON.parse(this.getAttribute('drivers-data')) : [];
-    
+    let points = 0;
+    driversData.forEach(driver => {
+        points += driver.points;
+    });
+
     this.shadowRoot.innerHTML = `
       <style>
         :host {
@@ -136,14 +139,14 @@ export default class TeamCard extends HTMLElement {
       
       <div class="team-card">
         <div class="team-header">
-          <div class="position">${position}</div>
+          <div class="position">${teamData.id}</div>
           <div class="team-name">
             <span class="team-color-bar" style="background-color: ${this.getTeamColor(teamData.name)};"></span>
             <span class="team-name-text">${teamData.name}</span>
           </div>
           <div class="team-logo">${this.getTeamLogo(teamData.name)}</div>
           <div class="points">
-            ${teamData.points}
+            ${points}
             <span class="pts-label">PTS</span>
           </div>
         </div>
@@ -165,14 +168,13 @@ export default class TeamCard extends HTMLElement {
     }
 
     return driversData.map(driver => {
-      const [firstName, lastName] = driver.name.split(' ');
       return `
         <div class="driver">
           <div>
-            <span>${firstName}</span>
-            <span class="driver-lastname">${lastName}</span>
+            <span>${driver.name}</span>
+            <span class="driver-lastname">${driver.lastName}</span>
           </div>
-          <img class="driver-photo" src="${driver.photoUrl || '/img/drivers/placeholder.png'}" alt="${driver.name}">
+          <img class="driver-photo" src="${driver.imageUrl}" alt="${driver.name}">
         </div>
       `;
     }).join('');
@@ -191,7 +193,7 @@ export default class TeamCard extends HTMLElement {
       'Kick Sauber': '#900000',
       'Racing Bulls': '#1E41FF'
     };
-    
+
     return teamColors[teamName] || '#333333';
   }
 
@@ -202,7 +204,7 @@ export default class TeamCard extends HTMLElement {
       'Red Bull Racing': '<svg width="24" height="24" viewBox="0 0 24 24"><path d="M4,12 L12,4 L20,12 L12,20 L4,12 Z" fill="#0600EF" /></svg>',
       'Ferrari': '<svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" fill="#DC0000" /></svg>'
     };
-    
+
     return logos[teamName] || '';
   }
 }
