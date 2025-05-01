@@ -6,22 +6,7 @@
 }
 
 /* Base Styles */
-:root {
-  --primary-color: #010b27;
-  --secondary-color: #be0f0f;
-  --accent-color: #010e47;
-  --text-color: #ffffff;
-  --background-color: #e9e9e9;
-  --card-background: #1e1e2d;
-  --border-color: #2a2a3a;
-  --success-color: #00ca47;
-  --warning-color: #ffb800;
-  --danger-color: #ff3e3e;
-  --grid-gap: 20px;
-  --border-radius: 8px;
-  --transition-speed: 0.3s;
-  --glow-color: rgba(0, 160, 222, 0.5);
-}
+
 
 * {
   margin: 0;

@@ -3,7 +3,7 @@ import './TeamCard.js';
 
 // Mock drivers data
 const driversData = {
-  1: { id: 1, name: "Oscar Piastri", photoUrl: "/img/drivers/piastri.png" },
+  1: { id: 1, name: "Oscar Piastri", photoUrl: "/img/drivers/piastri.avif" },
   2: { id: 2, name: "Lando Norris", photoUrl: "/img/drivers/norris.png" },
   3: { id: 3, name: "Max Verstappen", photoUrl: "/img/drivers/verstappen.png" },
   4: { id: 4, name: "George Russell", photoUrl: "/img/drivers/russell.png" },
