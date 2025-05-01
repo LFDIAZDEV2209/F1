@@ -56,6 +56,7 @@
     {
         "name": "Circuit Gilles Villeneuve",
         "country": 8,
+        
         "lenghtKm": 4.36,
         "laps": 70,
         "curves": [1.0, 1.9, 2.7, 3.5, 4.6],
