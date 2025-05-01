@@ -44,7 +44,7 @@ async function loadDrivers(query = "") {
 
     if (filteredDrivers.length === 0) {
       container.innerHTML =
-        '<p class="no-results">No se encontraron pilotos.</p>';
+        '<p class="cards-container__no-results">No se encontraron pilotos.</p>';
     }
   } catch (error) {
     console.error("Error loading drivers:", error);
@@ -60,7 +60,7 @@ let debounceTimeout;
 let searchInputLoadingIcon;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.querySelector(".search-input");
+  const searchInput = document.querySelector(".search-container__search-input");
   searchInputLoadingIcon = document.querySelector(
     ".search-container__loading-spinner"
   );
