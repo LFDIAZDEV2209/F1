@@ -1,4 +1,4 @@
-class DriverCard extends HTMLElement {
+class AdminDriverCard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
@@ -15,9 +15,9 @@ class DriverCard extends HTMLElement {
             driverNumber: this.getAttribute("driver-number"),
             flag: this.getAttribute("flag")
         };
-
+        
         this.shadowRoot.innerHTML = `
-         <link rel="stylesheet" href="/css/components/DriverCard.css">
+         <link rel="stylesheet" href="/css/components/AdminDriverCard.css">
             <div class="cards-container__card">
                 <div class="card__header">
                     <div class="header__position">${data.id}</div>
@@ -37,9 +37,13 @@ class DriverCard extends HTMLElement {
                     <img src="${data.imageUrl}" class="driver-image-container__driver-image" alt="${data.name} ${data.lastName}">
                     <div class="driver-image-container__driver-number">${data.driverNumber}</div>
                 </div>
+                <div class="card__admin-card-actions">
+                    <a href="#" class="admin-card-actions__edit-button primary-button" data-driver-id="${data.id}">Editar</a>
+                    <a href="#" class="admin-card-actions__remove-button secondary-button" data-driver-id="${data.id}">Eliminar</a>
+                </div>
             </div>
         `;
     }
 }
 
-customElements.define("driver-card", DriverCard);
+customElements.define("admin-driver-card", AdminDriverCard);
