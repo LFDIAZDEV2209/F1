@@ -4,7 +4,7 @@
         "team": 1,
         "name": "Alpine",
         "imageUrl": "/img/vehicles/alpine.avif",
-        "powerUnit": "Renault",
+        "powerUnit": 1,
         "chassis": "A525",
         "pilots": [11,19],
         "performanceSpecifications": {
@@ -19,7 +19,7 @@
         "team": 2,
         "name": "Haas",
         "imageUrl": "/img/vehicles/haas.avif",
-        "powerUnit": "Ferrari",
+        "powerUnit": 2,
         "chassis": "VF-25",
         "pilots": [9,13],
         "performanceSpecifications": {
@@ -34,7 +34,7 @@
         "team": 3,
         "name": "Mercedes",
         "imageUrl": "/img/vehicles/mercedes.avif",
-        "powerUnit": "Mercedes",
+        "powerUnit": 3,
         "chassis": "W16",
         "pilots": [4,6],
         "performanceSpecifications": {
@@ -49,7 +49,7 @@
         "team": 4,
         "name": "Williams",
         "imageUrl": "/img/vehicles/williams.avif",
-        "powerUnit": "Mercedes",
+        "powerUnit": 3,
         "chassis": "FW47",
         "pilots": [8,15],
         "performanceSpecifications": {
@@ -64,7 +64,7 @@
         "team": 5,
         "name": "Aston Martin",
         "imageUrl": "/img/vehicles/aston-martin.avif",
-        "powerUnit": "Mercedes",
+        "powerUnit": 3,
         "chassis": "AMR25",
         "pilots": [10,17],
         "performanceSpecifications": {
@@ -79,7 +79,7 @@
         "team": 6,
         "name": "Kick Sauber",
         "imageUrl": "/img/vehicles/kick-sauber.avif",
-        "powerUnit": "Ferrari",
+        "powerUnit": 2,
         "chassis": "C45",
         "pilots": [12,20],
         "performanceSpecifications": {
@@ -94,7 +94,7 @@
         "team": 7,
         "name": "Racing Bulls",
         "imageUrl": "/img/vehicles/racing-bulls.avif",
-        "powerUnit": "Honda",
+        "powerUnit": 4,
         "chassis": "VCARB-02",
         "pilots": [18,14],
         "performanceSpecifications": {
@@ -109,7 +109,7 @@
         "team": 8,
         "name": "Ferrari",
         "imageUrl": "/img/vehicles/ferrari.avif",
-        "powerUnit": "Ferrari",
+        "powerUnit": 2,
         "chassis": "SF-25",
         "pilots": [5,7],
         "performanceSpecifications": {
@@ -124,7 +124,7 @@
         "team": 9,
         "name": "McLaren",
         "imageUrl": "/img/vehicles/mclaren.avif",
-        "powerUnit": "Mercedes",
+        "powerUnit": 3,
         "chassis": "MCL39",
         "pilots": [1,2],
         "performanceSpecifications": {
@@ -139,7 +139,7 @@
         "team": 10,
         "name": "Red Bull Racing",
         "imageUrl": "/img/vehicles/red-bull-racing.avif",
-        "powerUnit": "Honda",
+        "powerUnit": 4,
         "chassis": "RB21",
         "pilots": [3,16],
         "performanceSpecifications": {
