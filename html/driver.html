@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Card Estilo F1</title>
     <link rel="stylesheet" href="/css/driver.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script type="module" src="/components/DriverCard.js"></script>
     <script src="/js/driver.js"></script>
 </head>
@@ -33,8 +34,11 @@
                     🏎 Check out this season's official F1 line-up. Full breakdown of drivers, points and current positions.
                     Follow your favourite F1 drivers on and off the track.
                 </div>
-                <div>
+                <div class="search-container">
                     <input type="text" id="search-input" class="search-input" placeholder="Search for a driver...">
+                    <span class="search-container__loading-spinner hidden">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
                 </div>
                 <div id="cards-container" class="pilotos-container"></div>
         

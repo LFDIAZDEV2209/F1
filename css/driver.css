@@ -143,6 +143,22 @@ body {
   margin: 0 40px;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-container__loading-spinner {
+    font-size: 24px;
+    color: var(--danger-color);
+}
+
+.search-container__loading-spinner.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .search-input {
     width: 100%;
     border-radius: 4px;
@@ -362,4 +378,9 @@ driver-card {
 
 .info-detalle img {
   width: 200px;
+}
+
+.no-results {
+    color: var(--danger-color);
+    font-weight: 600;
 }
