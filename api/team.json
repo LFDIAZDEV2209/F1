@@ -3,90 +3,70 @@
         "id": 1,
         "name": "Alpine",
         "country": 2,
-        "powerUnit": "Renault",
         "pilots": [11,19],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/alpine-logo.avif"
     },
     {
         "id": 2,
         "name": "Haas",
         "country": 13,
-        "powerUnit": "Ferrari",
         "pilots": [9,13],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/haas-logo.avif"
     },
     {
         "id": 3,
         "name": "Mercedes",
         "country": 2,
-        "powerUnit": "Mercedes",
         "pilots": [4,6],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/mercedes-logo.avif"
     },
     {
         "id": 4,
         "name": "Williams",
         "country": 2,
-        "powerUnit": "Mercedes",
         "pilots": [8,15],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/williams-logo.avif"
     },
     {
         "id": 5,
         "name": "Aston Martin",
         "country": 2,
-        "powerUnit": "Mercedes",
         "pilots": [10,17],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/aston-martin-logo.avif"
     },
     {
         "id": 6,
         "name": "Kick Sauber",
         "country": 14,
-        "powerUnit": "Ferrari",
         "pilots": [12,20],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/kick-sauber-logo.avif"
     },
     {
         "id": 7,
         "name": "Racing Bulls",
         "country": 5,
-        "powerUnit": "Honda",
         "pilots": [18,14],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/racing-bulls-logo.avif"
     },
     {
         "id": 8,
         "name": "Ferrari",
         "country": 5,
-        "powerUnit": "Ferrari",
         "pilots": [5,7],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/ferrari-logo.avif"
     },
     {
         "id": 9,
         "name": "McLaren",
         "country": 2,
-        "powerUnit": "Mercedes",
         "pilots": [1,2],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/mclaren-logo.avif"
     },
     {
         "id": 10,
         "name": "Red Bull Racing",
         "country": 2,
-        "powerUnit": "Honda",
         "pilots": [3,16],
-        "imageUrl": "",
-        "vehicle": 0
+        "imageUrl": "/img/teams/red-bull-racing-logo.avif"
     }
 ]
