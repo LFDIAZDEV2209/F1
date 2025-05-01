@@ -5,7 +5,8 @@
         "country": 2,
         "powerUnit": "Renault",
         "pilots": [11,19],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "country": 13,
         "powerUnit": "Ferrari",
         "pilots": [9,13],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "country": 2,
         "powerUnit": "Mercedes",
         "pilots": [4,6],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "country": 2,
         "powerUnit": "Mercedes",
         "pilots": [8,15],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "country": 2,
         "powerUnit": "Mercedes",
         "pilots": [10,17],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "country": 14,
         "powerUnit": "Ferrari",
         "pilots": [12,20],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "country": 5,
         "powerUnit": "Honda",
         "pilots": [18,14],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "country": 5,
         "powerUnit": "Ferrari",
         "pilots": [5,7],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "country": 2,
         "powerUnit": "Mercedes",
         "pilots": [1,2],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     },
     {
         "id": 10,
@@ -77,6 +86,7 @@
         "country": 2,
         "powerUnit": "Honda",
         "pilots": [3,16],
-        "imageUrl": ""
+        "imageUrl": "",
+        "vehicle": 0
     }
 ]
