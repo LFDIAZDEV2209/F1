@@ -15,27 +15,27 @@ class DriverCard extends HTMLElement {
             driverNumber: this.getAttribute("driver-number"),
             flag: this.getAttribute("flag")
         };
-
+        
         this.shadowRoot.innerHTML = `
-         <link rel="stylesheet" href="/css/components/DriverCard.css">
-            <div class="cards-container__card">
-                <div class="card__header">
-                    <div class="header__position">${data.id}</div>
-                    <div class="header__points">${data.points || '0'} PTS</div>
+         <link rel="stylesheet" href="/css/driver.css">
+            <div class="card">
+                <div class="card-header">
+                    <div class="position">${data.id}</div>
+                    <div class="points">${data.points || '0'} PTS</div>
                 </div>
-                <div class="card__driver-info">
-                    <div class="driver-info__driver-name-section">
-                        <div class="driver-name-section__driver-details">
-                            <div class="driver-details__first-name">${data.name}</div>
-                            <div class="driver-details__last-name">${data.lastName}</div>
+                <div class="driver-info">
+                    <div class="driver-name-section">
+                        <div class="driver-details">
+                            <div class="first-name">${data.name}</div>
+                            <div class="last-name">${data.lastName}</div>
                         </div>
-                        <img src="${data.flag}" class="driver-name-section__flag" alt="Bandera">
+                        <img src="${data.flag}" class="flag" alt="Bandera">
                     </div>
-                    <div class="driver-info__team">${data.team}</div>
+                    <div class="team">${data.team}</div>
                 </div>
-                <div class="card__driver-image-container">
-                    <img src="${data.imageUrl}" class="driver-image-container__driver-image" alt="${data.name} ${data.lastName}">
-                    <div class="driver-image-container__driver-number">${data.driverNumber}</div>
+                <div class="driver-image-container">
+                    <img src="${data.imageUrl}" class="driver-image" alt="${data.name} ${data.lastName}">
+                    <div class="driver-number">${data.driverNumber}</div>
                 </div>
             </div>
         `;

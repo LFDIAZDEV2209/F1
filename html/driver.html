@@ -12,11 +12,11 @@
 
 <body>
     <div class="app-container">
-        <header class="app-container__main-header">
-            <div class="main-header__logo">
+        <header class="main-header">
+            <div class="logo">
                 <img src="/img/F1_2025_Logo-removebg-preview.png" alt="Formula 1 Logo">
             </div>
-            <nav class="main-header__main-nav">
+            <nav class="main-nav">
                 <a href="./entrada.html" class="main-nav__item">Dashboard</a>
                 <a href="#" class="main-nav__item">Drivers</a>
                 <a href="#" class="main-nav__item">Teams</a>
@@ -26,22 +26,33 @@
             </nav>
         </header>
         <main class="page-content">
-            <div class="page-content__main-title">
+            <div class="main-title">
                 <span>F1 Drivers 2025</span>
             </div>
-            <section class="page-content__drivers-section">
-                <div class="drivers-section__subtitle">
+            <section class="drivers-section">
+                <div class="subtitle">
                     🏎 Check out this season's official F1 line-up. Full breakdown of drivers, points and current positions.
                     Follow your favourite F1 drivers on and off the track.
                 </div>
-                <div class="drivers-section__search-container">
-                    <input type="text" id="search-input" class="search-container__search-input" placeholder="Search for a driver...">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search for a driver...">
                     <span class="search-container__loading-spinner hidden">
                         <i class="fas fa-spinner fa-spin"></i>
                     </span>
                 </div>
-                <div id="cards-container" class="drivers-section__cards-container"></div>
-
+                <div id="cards-container" class="pilotos-container"></div>
+        
+                    <div class="info-detalle" id="infoPiloto">
+                        <img src="tu_imagen2.png" alt="Detalles Oscar Piastri">
+                        <ul>
+                            <li><strong>Team:</strong> McLaren</li>
+                            <li><strong>Country:</strong> Australia</li>
+                            <li><strong>Podiums:</strong> 14</li>
+                            <li><strong>Points:</strong> 488</li>
+                            <li><strong>Grands Prix entered:</strong> 51</li>
+                            <li><strong>Date of birth:</strong> 06/04/2001</li>
+                        </ul>
+                    </div>
             </section>
         </main>
         

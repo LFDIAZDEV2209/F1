@@ -1,20 +1,18 @@
 async function loadDrivers(query = "") {
   searchInputLoadingIcon.classList.remove("hidden");
   try {
-    const [driversResponse, countriesResponse, teamsResponse] = await Promise.all([
+    const [driversResponse, countriesResponse] = await Promise.all([
       fetch("/api/driver.json"),
       fetch("/api/country.json"),
-      fetch("/api/team.json"),
     ]);
 
-    if (!driversResponse.ok || !countriesResponse.ok || !teamsResponse.ok) {
+    if (!driversResponse.ok || !countriesResponse.ok) {
       throw new Error("Error en la carga de datos");
     }
 
-    const [driversData, countriesData, teamsData] = await Promise.all([
+    const [driversData, countriesData] = await Promise.all([
       driversResponse.json(),
       countriesResponse.json(),
-      teamsResponse.json(),
     ]);
 
     const container = document.getElementById("cards-container");
@@ -27,14 +25,13 @@ async function loadDrivers(query = "") {
 
     filteredDrivers.forEach((driver) => {
       const countryData = countriesData.find((country) => country.id === driver.country);
-      const teamData = teamsData.find((team) => team.id === driver.team); 
-
+      
       const card = document.createElement("driver-card");
       card.setAttribute("id", driver.id);
       card.setAttribute("name", driver.name);
       card.setAttribute("last-name", driver.lastName);
       card.setAttribute("points", driver.points);
-      card.setAttribute("team", teamData.name);
+      card.setAttribute("team", driver.team);
       card.setAttribute("image-url", driver.imageUrl);
       card.setAttribute("driver-number", driver.driverNumber);
       card.setAttribute("flag", countryData ? countryData.flag : "/img/flags/colombia.jpg");
@@ -44,7 +41,7 @@ async function loadDrivers(query = "") {
 
     if (filteredDrivers.length === 0) {
       container.innerHTML =
-        '<p class="cards-container__no-results">No se encontraron pilotos.</p>';
+        '<p class="no-results">No se encontraron pilotos.</p>';
     }
   } catch (error) {
     console.error("Error loading drivers:", error);
@@ -60,7 +57,7 @@ let debounceTimeout;
 let searchInputLoadingIcon;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.querySelector(".search-container__search-input");
+  const searchInput = document.querySelector(".search-input");
   searchInputLoadingIcon = document.querySelector(
     ".search-container__loading-spinner"
   );
