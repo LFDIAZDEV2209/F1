@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Alpine",
+        "country": 2,
+        "powerUnit": "Renault",
+        "pilots": [11,19],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 2,
+        "name": "Haas",
+        "country": 13,
+        "powerUnit": "Ferrari",
+        "pilots": [9,13],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 3,
+        "name": "Mercedes",
+        "country": 2,
+        "powerUnit": "Mercedes",
+        "pilots": [4,6],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 4,
+        "name": "Williams",
+        "country": 2,
+        "powerUnit": "Mercedes",
+        "pilots": [8,15],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 5,
+        "name": "Aston Martin",
+        "country": 2,
+        "powerUnit": "Mercedes",
+        "pilots": [10,17],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 6,
+        "name": "Kick Sauber",
+        "country": 14,
+        "powerUnit": "Ferrari",
+        "pilots": [12,20],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 7,
+        "name": "Racing Bulls",
+        "country": 5,
+        "powerUnit": "Honda",
+        "pilots": [18,14],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 8,
+        "name": "Ferrari",
+        "country": 5,
+        "powerUnit": "Ferrari",
+        "pilots": [5,7],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 9,
+        "name": "McLaren",
+        "country": 2,
+        "powerUnit": "Mercedes",
+        "pilots": [1,2],
+        "imageUrl": "",
+        "vehicle": 0
+    },
+    {
+        "id": 10,
+        "name": "Red Bull Racing",
+        "country": 2,
+        "powerUnit": "Honda",
+        "pilots": [3,16],
+        "imageUrl": "",
+        "vehicle": 0
+    }
+]

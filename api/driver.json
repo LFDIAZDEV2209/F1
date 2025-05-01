@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "name": "OSCAR",
+        "lastName": "PIASTRI",
+        "imageUrl": "/img/piastri.avif",
+        "team": "McLaren",
+        "driverNumber": 81,
+        "country": 1,
+        "points": 95
+    },
+    {
+        "id": 2,
+        "name": "LANDON",
+        "lastName": "NORRIS",
+        "imageUrl": "/img/norris.avif",
+        "team": "McLaren",
+        "driverNumber": 4,
+        "country": 2,
+        "points": 85
+    },
+    {
+        "id": 3,
+        "name": "MAX",
+        "lastName": "Verstappen",
+        "imageUrl": "/img/verstappen.avif",
+        "team": "Red Bull Racing",
+        "driverNumber": 1,
+        "country": 3,
+        "points": 70
+    },
+    {
+        "id": 4,
+        "name": "GEORGE",
+        "lastName": "RUSELL",
+        "imageUrl": "/img/russell.avif",
+        "team": "Mercedes",
+        "driverNumber": 63,
+        "country": 2,
+        "points": 75
+    },
+    {
+        "id": 5,
+        "name": "CHARLES",
+        "lastName": "LECLERC",
+        "imageUrl": "/img/leclerc.avif",
+        "team": "ferrari",
+        "driverNumber": 16,
+        "country": 4,
+        "points": 20
+    },
+    {
+        "id": 6,
+        "name": "KIMI",
+        "lastName": "ANTONELLI",
+        "imageUrl": "/img/antonelli.avif",
+        "team": "Mercedes",
+        "driverNumber": 12,
+        "country": 5,
+        "points": 90
+    },
+    {
+        "id": 7,
+        "name": "LEWIS",
+        "lastName": "HAMILTON",
+        "imageUrl": "/img/hamilton.avif",
+        "team": "ferrari",
+        "driverNumber": 44,
+        "country": 2,
+        "points": 15
+    },
+    {
+        "id": 8,
+        "name": "ALEXANDER",
+        "lastName": "ALBON",
+        "imageUrl": "/img/albo.webp",
+        "team": "Williams",
+        "driverNumber": 23,
+        "country": 6,
+        "points": 27
+    },
+    {
+        "id": 9,
+        "name": "ESTEBAN",
+        "lastName": "OCON",
+        "imageUrl": "/img/ocon.avif",
+        "team": "Haas",
+        "driverNumber": 31,
+        "country": 7,
+        "points": 49
+    },
+    {
+        "id": 10,
+        "name": "LANCE",
+        "lastName": "STOLL",
+        "imageUrl": "/img/stroll.webp",
+        "team": "Aston Martin",
+        "driverNumber": 18,
+        "country": 8,
+        "points": 79
+    },
+    {
+        "id": 11,
+        "name": "PIERRE",
+        "lastName": "GASLY",
+        "imageUrl": "/img/gasly.avif",
+        "team": "Alpine",
+        "driverNumber": 10,
+        "country": 7,
+        "points": 15
+    },
+    {
+        "id": 12,
+        "name": "NICO",
+        "lastName": "HULKENBERG",
+        "imageUrl": "/img/hulkenberg.avif",
+        "team": "Kick Sauber",
+        "driverNumber": 27,
+        "country": 9,
+        "points": 50
+    },
+    {
+        "id": 13,
+        "name": "OLIVER",
+        "lastName": "BEARMAN",
+        "imageUrl": "/img/oliver.avif",
+        "team": "haas",
+        "driverNumber": 87,
+        "country": 2,
+        "points": 5
+    },
+    {
+        "id": 14,
+        "name": "ISACK",
+        "lastName": "HADJAR",
+        "imageUrl": "/img/isack.avif",
+        "team": "racing bulls",
+        "driverNumber": 6,
+        "country": 7,
+        "points": 91
+    },
+    {
+        "id": 15,
+        "name": "CARLOS",
+        "lastName": "SAINZ",
+        "imageUrl": "/img/sainz.avif",
+        "team": "Williams",
+        "driverNumber": 55,
+        "country": 10,
+        "points": 78
+    },
+    {
+        "id": 16,
+        "name": "YUKI",
+        "lastName": "TSUNODA",
+        "imageUrl": "/img/tsunoda.avif",
+        "team": "Red Bull Racing",
+        "driverNumber": 22,
+        "country": 11,
+        "points": 77
+    },
+    {
+        "id": 17,
+        "name": "FERNANDO",
+        "lastName": "ALONSO",
+        "imageUrl": "/img/alonso.avif",
+        "team": "Aston Martin",
+        "driverNumber": 14,
+        "country": 10,
+        "points": 27
+    },
+    {
+        "id": 18,
+        "name": "LIAM",
+        "lastName": "LAWSON",
+        "imageUrl": "/img/lawson.avif",
+        "team": "Racing Bulls",
+        "driverNumber": 30,
+        "country": 1,
+        "points": 93
+    },
+    {
+        "id": 19,
+        "name": "JACK",
+        "lastName": "DOOHAN",
+        "imageUrl": "/img/Jack_Doohan.webp",
+        "team": "Alpine",
+        "driverNumber": 7,
+        "country": 1,
+        "points": 13
+    },
+    {
+        "id": 20,
+        "name": "GABRIEL",
+        "lastName": "BORTOLETO",
+        "imageUrl": "/img/bortoleto.avif",
+        "team": "Kick Sauber",
+        "driverNumber": 5,
+        "country": 12,
+        "points": 100
+    }
+]
