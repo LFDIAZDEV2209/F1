@@ -4,7 +4,7 @@
         "name": "OSCAR",
         "lastName": "PIASTRI",
         "imageUrl": "/img/piastri.avif",
-        "team": "McLaren",
+        "team": 9,
         "driverNumber": 81,
         "country": 1,
         "points": 95
@@ -14,7 +14,7 @@
         "name": "LANDON",
         "lastName": "NORRIS",
         "imageUrl": "/img/norris.avif",
-        "team": "McLaren",
+        "team": 9,
         "driverNumber": 4,
         "country": 2,
         "points": 85
@@ -24,7 +24,7 @@
         "name": "MAX",
         "lastName": "Verstappen",
         "imageUrl": "/img/verstappen.avif",
-        "team": "Red Bull Racing",
+        "team": 10,
         "driverNumber": 1,
         "country": 3,
         "points": 70
@@ -34,7 +34,7 @@
         "name": "GEORGE",
         "lastName": "RUSELL",
         "imageUrl": "/img/russell.avif",
-        "team": "Mercedes",
+        "team": 3,
         "driverNumber": 63,
         "country": 2,
         "points": 75
@@ -44,7 +44,7 @@
         "name": "CHARLES",
         "lastName": "LECLERC",
         "imageUrl": "/img/leclerc.avif",
-        "team": "ferrari",
+        "team": 8,
         "driverNumber": 16,
         "country": 4,
         "points": 20
@@ -54,7 +54,7 @@
         "name": "KIMI",
         "lastName": "ANTONELLI",
         "imageUrl": "/img/antonelli.avif",
-        "team": "Mercedes",
+        "team": 3,
         "driverNumber": 12,
         "country": 5,
         "points": 90
@@ -64,7 +64,7 @@
         "name": "LEWIS",
         "lastName": "HAMILTON",
         "imageUrl": "/img/hamilton.avif",
-        "team": "ferrari",
+        "team": 8,
         "driverNumber": 44,
         "country": 2,
         "points": 15
@@ -74,7 +74,7 @@
         "name": "ALEXANDER",
         "lastName": "ALBON",
         "imageUrl": "/img/albo.webp",
-        "team": "Williams",
+        "team": 4,
         "driverNumber": 23,
         "country": 6,
         "points": 27
@@ -84,7 +84,7 @@
         "name": "ESTEBAN",
         "lastName": "OCON",
         "imageUrl": "/img/ocon.avif",
-        "team": "Haas",
+        "team": 2,
         "driverNumber": 31,
         "country": 7,
         "points": 49
@@ -94,7 +94,7 @@
         "name": "LANCE",
         "lastName": "STOLL",
         "imageUrl": "/img/stroll.webp",
-        "team": "Aston Martin",
+        "team": 5,
         "driverNumber": 18,
         "country": 8,
         "points": 79
@@ -104,7 +104,7 @@
         "name": "PIERRE",
         "lastName": "GASLY",
         "imageUrl": "/img/gasly.avif",
-        "team": "Alpine",
+        "team": 1,
         "driverNumber": 10,
         "country": 7,
         "points": 15
@@ -114,7 +114,7 @@
         "name": "NICO",
         "lastName": "HULKENBERG",
         "imageUrl": "/img/hulkenberg.avif",
-        "team": "Kick Sauber",
+        "team": 6,
         "driverNumber": 27,
         "country": 9,
         "points": 50
@@ -124,7 +124,7 @@
         "name": "OLIVER",
         "lastName": "BEARMAN",
         "imageUrl": "/img/oliver.avif",
-        "team": "haas",
+        "team": 2,
         "driverNumber": 87,
         "country": 2,
         "points": 5
@@ -134,7 +134,7 @@
         "name": "ISACK",
         "lastName": "HADJAR",
         "imageUrl": "/img/isack.avif",
-        "team": "racing bulls",
+        "team": 7,
         "driverNumber": 6,
         "country": 7,
         "points": 91
@@ -144,7 +144,7 @@
         "name": "CARLOS",
         "lastName": "SAINZ",
         "imageUrl": "/img/sainz.avif",
-        "team": "Williams",
+        "team": 4,
         "driverNumber": 55,
         "country": 10,
         "points": 78
@@ -154,7 +154,7 @@
         "name": "YUKI",
         "lastName": "TSUNODA",
         "imageUrl": "/img/tsunoda.avif",
-        "team": "Red Bull Racing",
+        "team": 10,
         "driverNumber": 22,
         "country": 11,
         "points": 77
@@ -164,7 +164,7 @@
         "name": "FERNANDO",
         "lastName": "ALONSO",
         "imageUrl": "/img/alonso.avif",
-        "team": "Aston Martin",
+        "team": 5,
         "driverNumber": 14,
         "country": 10,
         "points": 27
@@ -174,7 +174,7 @@
         "name": "LIAM",
         "lastName": "LAWSON",
         "imageUrl": "/img/lawson.avif",
-        "team": "Racing Bulls",
+        "team": 7,
         "driverNumber": 30,
         "country": 1,
         "points": 93
@@ -184,7 +184,7 @@
         "name": "JACK",
         "lastName": "DOOHAN",
         "imageUrl": "/img/Jack_Doohan.webp",
-        "team": "Alpine",
+        "team": 1,
         "driverNumber": 7,
         "country": 1,
         "points": 13
@@ -194,7 +194,7 @@
         "name": "GABRIEL",
         "lastName": "BORTOLETO",
         "imageUrl": "/img/bortoleto.avif",
-        "team": "Kick Sauber",
+        "team": 6,
         "driverNumber": 5,
         "country": 12,
         "points": 100
