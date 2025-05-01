@@ -1,16 +1,5 @@
 // teams.js
-// Dynamic import with error handling to prevent duplicate registrations
-async function importTeamCard() {
-  try {
-    await import('./TeamCard.js');
-    await import('../js/teamCard.js');
-  } catch (error) {
-    console.warn('TeamCard may already be imported:', error);
-  }
-}
-
-// Import TeamCard component
-importTeamCard();
+import './TeamCard.js';
 
 // Mock drivers data
 const driversData = {
@@ -101,4 +90,4 @@ async function renderTeams() {
 }
 
 // Initialize when DOM is fully loaded
-document.addEventListener('DOMContentLoaded', renderTeams); 
+document.addEventListener('DOMContentLoaded', renderTeams);

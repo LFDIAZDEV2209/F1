@@ -1,35 +1,47 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>F1 Teams 2025</title>
+  <!-- Add Titillium Web font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+  <!-- F1 Header with navigation -->
+  <header class="f1-header">
+    <div class="f1-logo-container">
+      <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="Formula 1 Logo" class="f1-logo">
+    </div>
+    <nav class="main-nav">
+              <a href="#" class="main-nav__item">Dashboard</a>
+              <a href="./driver.html" class="main-nav__item">Drivers</a>
+              <a href="#" class="main-nav__item">Teams</a>
+              <a href="#" class="main-nav__item">Circuits</a>
+              <a href="#" class="main-nav__item">Vehicles</a>
+              <a href="#" class="main-nav__item">Simulation</a>
+            </nav>
+  </header>
+
   <h1>F1 Teams 2025</h1>
-
+  
+  <!-- Description box -->
+  <div class="description-box">
+    Discover everything you need to know about this year's Formula 1 teams - drivers, podium finishes, points earned and championship titles.
+  </div>
+  
+  <!-- Team cards container -->
   <div id="cards-container"></div>
-
+  
   <!-- Scripts -->
+  <script src="../js/vehiclesData.js"></script>
   <script type="module" src="../js/TeamCard.js"></script>
   <script type="module" src="../js/teams.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
