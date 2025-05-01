@@ -1,18 +1,43 @@
-function mostrarInfo() {
-    const info = document.getElementById('infoPiloto');
-    info.style.display = (info.style.display === 'none' || info.style.display === '') ? 'block' : 'none';
+async function loadDrivers() {
+  try {
+    // Llamada a la API local
+    const response = await fetch('/api/driver.json');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const driversData = await response.json();
+    const container = document.getElementById('cards-container');
+    container.innerHTML = ''; // Limpiar contenedor
+
+    // Mapear los datos de la API a la estructura que espera el componente
+    driversData.forEach(driver => {
+      const card = document.createElement('driver-card');
+
+      // Prepara los datos que espera tu componente
+      const driverData = {
+        id: driver.id,
+        points: driver.points,
+        name: driver.name,
+        lastName: driver.lastName,
+        team: driver.team,
+        imageUrl: driver.imageUrl,      
+        driverNumber: driver.driverNumber,
+        flag: driver.flag
+      };
+
+      card.setAttribute('data', JSON.stringify(driverData));
+
+      // Insertar la card en el contenedor
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error('Error loading drivers:', error);
+    const container = document.getElementById('cards-container');
+    container.innerHTML = '<p class="error-message">Error al cargar los datos de los pilotos. Por favor intenta nuevamente más tarde.</p>';
   }
-  
+}
 
-
-
-<div class="info-detalle" id="infoPiloto">
-<ul>
-  <li><strong>Team:</strong> McLaren</li>
-  <li><strong>Country:</strong> Australia</li>
-  <li><strong>Podiums:</strong> 14</li>
-  <li><strong>Points:</strong> 488</li>
-  <li><strong>Grands Prix entered:</strong> 51</li>
-  <li><strong>Date of birth:</strong> 06/04/2001</li>
-</ul>
-</div>
+document.addEventListener('DOMContentLoaded', loadDrivers);

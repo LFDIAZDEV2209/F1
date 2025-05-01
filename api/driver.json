@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "name": "OSCAR",
+        "lastName": "PIASTRI",
+        "imageUrl": "/img/piastri.avif",
+        "team": "McLaren",
+        "driverNumber": 81,
+        "flag": "/img/australia.jpeg",
+        "points": 95
+    },
+    {
+        "id": 2,
+        "name": "LANDON",
+        "lastName": "NORRIS",
+        "imageUrl": "/img/norris.avif",
+        "team": "McLaren",
+        "driverNumber": 4,
+        "flag": "/img/reinounido.jpeg",
+        "points": 85
+    },
+    {
+        "id": 3,
+        "name": "MAX",
+        "lastName": "Verstappen",
+        "imageUrl": "/img/verstappen.avif",
+        "team": "Red Bull Racing",
+        "driverNumber": 1,
+        "flag": "/img/nederlands.jpeg",
+        "points": 70
+    },
+    {
+        "id": 4,
+        "name": "GEORGE",
+        "lastName": "RUSELL",
+        "imageUrl": "/img/russell.avif",
+        "team": "Mercedes",
+        "driverNumber": 63,
+        "flag": "/img/reinounido.jpeg",
+        "points": 75
+    },
+    {
+        "id": 5,
+        "name": "CHARLES",
+        "lastName": "LECLERC",
+        "imageUrl": "/img/leclerc.avif",
+        "team": "ferrari",
+        "driverNumber": 16,
+        "flag": "/img/polonia.jpeg",
+        "points": 20
+    },
+    {
+        "id": 6,
+        "name": "KIMI",
+        "lastName": "ANTONELLI",
+        "imageUrl": "/img/antonelli.avif",
+        "team": "Mercedes",
+        "driverNumber": 12,
+        "flag": "/img/italia.jpeg",
+        "points": 90
+    },
+    {
+        "id": 7,
+        "name": "LEWIS",
+        "lastName": "HAMILTON",
+        "imageUrl": "/img/hamilton.avif",
+        "team": "ferrari",
+        "driverNumber": 44,
+        "flag": "/img/reinounido.jpeg",
+        "points": 15
+    },
+    {
+        "id": 8,
+        "name": "ALEXANDER",
+        "lastName": "ALBON",
+        "imageUrl": "/img/albo.webp",
+        "team": "Williams",
+        "driverNumber": 23,
+        "flag": "/img/tailandia.jpeg",
+        "points": 27
+    },
+    {
+        "id": 9,
+        "name": "ESTEBAN",
+        "lastName": "OCON",
+        "imageUrl": "/img/ocon.avif",
+        "team": "Haas",
+        "driverNumber": 31,
+        "flag": "/img/francia.jpeg",
+        "points": 49
+    },
+    {
+        "id": 10,
+        "name": "LANCE",
+        "lastName": "STOLL",
+        "imageUrl": "/img/stroll.webp",
+        "team": "Aston Martin",
+        "driverNumber": 18,
+        "flag": "/img/canada.jpeg",
+        "points": 79
+    },
+    {
+        "id": 11,
+        "name": "PIERRE",
+        "lastName": "GASLY",
+        "imageUrl": "/img/gasly.avif",
+        "team": "Alpine",
+        "driverNumber": 10,
+        "flag": "/img/francia.jpeg",
+        "points": 15
+    },
+    {
+        "id": 12,
+        "name": "NICO",
+        "lastName": "HULKENBERG",
+        "imageUrl": "/img/hulkenberg.avif",
+        "team": "Kick Sauber",
+        "driverNumber": 27,
+        "flag": "/img/germanya.jpeg",
+        "points": 50
+    },
+    {
+        "id": 13,
+        "name": "OLIVER",
+        "lastName": "BEARMAN",
+        "imageUrl": "/img/oliver.avif",
+        "team": "haas",
+        "driverNumber": 87,
+        "flag": "/img/reinounido.jpeg",
+        "points": 5
+    },
+    {
+        "id": 14,
+        "name": "ISACK",
+        "lastName": "HADJAR",
+        "imageUrl": "/img/isack.avif",
+        "team": "racing bulls",
+        "driverNumber": 6,
+        "flag": "/img/francia.jpeg",
+        "points": 91
+    },
+    {
+        "id": 15,
+        "name": "CARLOS",
+        "lastName": "SAINZ",
+        "imageUrl": "/img/sainz.avif",
+        "team": "Williams",
+        "driverNumber": 55,
+        "flag": "/img/españa.jpeg",
+        "points": 78
+    },
+    {
+        "id": 16,
+        "name": "YUKI",
+        "lastName": "TSUNODA",
+        "imageUrl": "/img/tsunoda.avif",
+        "team": "Red Bull Racing",
+        "driverNumber": 22,
+        "flag": "/img/japon.jpeg",
+        "points": 77
+    },
+    {
+        "id": 17,
+        "name": "FERNANDO",
+        "lastName": "ALONSO",
+        "imageUrl": "/img/alonso.avif",
+        "team": "Aston Martin",
+        "driverNumber": 14,
+        "flag": "/img/españa.jpeg",
+        "points": 27
+    },
+    {
+        "id": 18,
+        "name": "LIAM",
+        "lastName": "LAWSON",
+        "imageUrl": "/img/lawson.avif",
+        "team": "Racing Bulls",
+        "driverNumber": 30,
+        "flag": "/img/australia.jpeg",
+        "points": 93
+    },
+    {
+        "id": 19,
+        "name": "JACK",
+        "lastName": "DOOHAN",
+        "imageUrl": "/img/Jack_Doohan.webp",
+        "team": "Alpine",
+        "driverNumber": 7,
+        "flag": "/img/australia.jpeg",
+        "points": 13
+    },
+    {
+        "id": 20,
+        "name": "GABRIEL",
+        "lastName": "BORTOLETO",
+        "imageUrl": "/img/bortoleto.avif",
+        "team": "Kick Sauber",
+        "driverNumber": 5,
+        "flag": "/img/brasil.jpeg",
+        "points": 100
+    }
+]

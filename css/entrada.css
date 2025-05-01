@@ -68,12 +68,12 @@ body {
     letter-spacing: 1px;
 }
 
-.main-nav ul {
+.main-nav {
     display: flex;
     list-style: none;
 }
 
-.main-nav li {
+.main-nav__item {
     margin: 0 15px;
     padding: 8px 15px;
     cursor: pointer;
@@ -81,18 +81,19 @@ body {
     transition: all var(--transition-speed);
     font-weight: 600;
     position: relative;
-   
+    color: white;
+    text-decoration: none;
 }
 
-.main-nav li:hover {
+.main-nav__item:hover {
     background-color: rgba(4, 12, 104, 0.589);
 }
 
-.main-nav li.active {
+.main-nav__item.active {
     background-color: var(--primary-color);
 }
 
-.main-nav li.active::after {
+.main-nav__item.active::after {
     content: '';
     position: absolute;
     bottom: -8px;
