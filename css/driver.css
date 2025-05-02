@@ -384,3 +384,88 @@ driver-card {
     color: var(--danger-color);
     font-weight: 600;
 }
+
+
+.card-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+}
+
+.info-card {
+  position: absolute;
+  left: 0;
+  bottom: -100%; /* Comienza fuera de la vista (abajo) */
+  width: 100%;
+  background-color: rgba(15, 15, 30, 0.95);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  transition: bottom 0.5s ease; /* Animación de 0.5 segundos */
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Cuando está activa, la info-card sube a la posición visible */
+.card-container.active .info-card {
+  bottom: 0;
+}
+
+/* Botón para volver */
+.back-btn {
+  padding: 8px 15px;
+  background-color: #e10600; /* Color rojo F1 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+  background-color: #bc0500;
+}
+
+/* Ocultamos el info-detalle original ya que usaremos la versión animada */
+#infoPiloto {
+  display: none;
+}
+
+/* Estilo para la info del piloto dentro de la animación */
+.piloto-info {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.piloto-info h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.piloto-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.piloto-info ul li {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.piloto-info ul li strong {
+  color: #e10600;
+  margin-right: 5px;
+}
