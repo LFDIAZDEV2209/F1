@@ -65,19 +65,73 @@ body, html {
 }
 
 .login-btn {
+    position: relative;
     padding: 12px 30px;
     background-color: transparent;
     color: white;
-    border: 2px solid white;
-    border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    border: none; /* Quitamos el borde original */
+    border-radius: 5px;
     width: 250px;
+    z-index: 1;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Pseudo-elemento para crear el borde animado */
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(
+        90deg, 
+        #e10600 0%, /* Rojo F1 */
+        #ff0000 20%,
+        #807e7c70 40%, /* Naranja */
+        #e10600 60%,
+        #000000 80%, /* Negro */
+        #e10600 100%
+    );
+    border-radius: 7px;
+    background-size: 300% 100%;
+    animation: f1-border-flow 3s linear infinite;
+}
+
+/* Fondo interno del botón para crear el efecto de borde */
+.login-btn::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+    border-radius: 3px;
+    z-index: -1;
 }
 
 .login-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(225, 6, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+.login-btn:hover::before {
+    animation: f1-border-flow 1.5s linear infinite;
+}
+
+/* Animación para el degradado del borde */
+@keyframes f1-border-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 300% 50%;
+    }
 }
 
 /* Modal Styles */
@@ -155,3 +209,5 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+

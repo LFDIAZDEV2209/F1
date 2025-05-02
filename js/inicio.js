@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function () {
             btnEnter.style.opacity = '1';
         }, 100);
-    }, 25000);
+    }, 6000);
 
     video.addEventListener('ended', function () {
         if (loginOptions.style.display !== 'flex') {

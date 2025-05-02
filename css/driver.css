@@ -35,7 +35,7 @@ body {
   min-height: 100vh;
 }
 
-.app-container__main-header {
+.main-header {
   background-color: var(--secondary-color);
   padding: 15px 30px;
   display: flex;
@@ -48,24 +48,24 @@ body {
   z-index: 100;
 }
 
-.main-header__logo {
+.logo {
   display: flex;
   align-content: center;
 }
 
-.main-header__logo img {
+.logo img {
   height: 40px;
   margin-right: 20px;
   align-items: center;
 }
 
-.main-header__logo h1 {
+.logo h1 {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
-.main-header__main-nav {
+.main-nav {
   display: flex;
   list-style: none;
 }
@@ -112,7 +112,7 @@ body {
   font-style: normal;
 }
 
-.page-content__drivers-section {
+.drivers-section {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -121,7 +121,7 @@ body {
     padding: 24px;
 }
 
-.page-content__main-title {
+.main-title {
   font-size: 48px;
   font-weight: bold;
   padding: 20px 40px;
@@ -130,11 +130,11 @@ body {
   align-items: center;
 }
 
-.page-content__main-title span {
+.main-title span {
   color: #000;
 }
 
-.drivers-section__subtitle {
+.subtitle {
   background-color: #efefef;
   padding: 15px 40px;
   font-size: 16px;
@@ -143,7 +143,7 @@ body {
   margin: 0 40px;
 }
 
-.drivers-section__search-container {
+.search-container {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -159,7 +159,7 @@ body {
     visibility: hidden;
 }
 
-.search-container__search-input {
+.search-input {
     width: 100%;
     border-radius: 4px;
     line-height: 24px;
@@ -170,19 +170,302 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.search-container__search-inputt:focus {
+.search-input:focus {
     outline: none;
     background-color: rgb(255, 218, 218);
 }
 
-.drivers-section__cards-container {
+.pilotos-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--grid-gap);
   background-color: var(--background-color);
 }
 
-.cards-container__no-results {
-  color: var(--danger-color);
-  font-weight: 600;
+driver-card {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  width: 320px;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background: white;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 0px auto;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(
+    transparent,
+    #000000,
+    #2c2c2c,
+    #7f7f7f,
+    #ff0000,
+    transparent 30%
+  );
+  animation: rotate 4s linear infinite;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 4px;
+  top: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  background: white;
+  border-radius: 12px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  position: relative;
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.position {
+  font-size: 36px;
+  font-weight: bold;
+  color: #000;
+}
+
+.points {
+  background-color: #000;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.driver-info {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.driver-name-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.driver-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-name {
+  color: #777;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.last-name {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: -5px;
+  color: #1e1e2d;
+}
+
+.flag {
+  width: 36px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.team {
+  margin-top: 8px;
+  color: #777;
+}
+
+.driver-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.driver-number {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 64px;
+  font-weight: bold;
+  color: #0c0704;
+  line-height: 1;
+  opacity: 0.9;
+}
+@keyframes f1Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.driver-number {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 0.95;
+
+  background: linear-gradient(
+    120deg,
+    #ff0000,
+    #7f7f7f,
+    #ffffff,
+    #000000,
+    #ff0000
+  );
+  background-size: 200% 200%;
+  animation: f1Gradient 3s linear infinite;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.info-detalle {
+  display: none;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  background-color: #f8f8f8;
+  max-width: 600px;
+}
+
+.imagen-piloto {
+  width: 100%;
+}
+
+.info-detalle img {
+  width: 200px;
+}
+
+.no-results {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+
+.card-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+}
+
+.info-card {
+  position: absolute;
+  left: 0;
+  bottom: -100%; /* Comienza fuera de la vista (abajo) */
+  width: 100%;
+  background-color: rgba(15, 15, 30, 0.95);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  transition: bottom 0.5s ease; /* Animación de 0.5 segundos */
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Cuando está activa, la info-card sube a la posición visible */
+.card-container.active .info-card {
+  bottom: 0;
+}
+
+/* Botón para volver */
+.back-btn {
+  padding: 8px 15px;
+  background-color: #e10600; /* Color rojo F1 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+  background-color: #bc0500;
+}
+
+/* Ocultamos el info-detalle original ya que usaremos la versión animada */
+#infoPiloto {
+  display: none;
+}
+
+/* Estilo para la info del piloto dentro de la animación */
+.piloto-info {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.piloto-info h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.piloto-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.piloto-info ul li {
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.piloto-info ul li strong {
+  color: #e10600;
+  margin-right: 5px;
 }
