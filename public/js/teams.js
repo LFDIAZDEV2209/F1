@@ -24,7 +24,7 @@ async function fetchVehicles() {
 
 async function fetchDrivers() {
   try {
-    const response = await fetch('/api/driver.json');
+    const response = await fetch('/api/driver');
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);

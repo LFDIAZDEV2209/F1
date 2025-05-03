@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (user) {
                 localStorage.setItem('userToken', 'fake-token-' + user.username);
                 localStorage.setItem('userData', JSON.stringify(user));
-                window.location.href = "entrada.html"
+                window.location.href = "/dashboard"
             } else {
                 alert('Credenciales incorrectas');
             }
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (adminUsername === ADMIN_USERNAME && adminPassword === ADMIN_PASSWORD) {
             localStorage.setItem('isAdmin', true);
             adminModal.style.display = 'none';
-            window.location.href = "admin-entrada.html"
+            window.location.href = "/admin/dashboard"
         } else {
             alert('Credenciales de administrador incorrectas');
         }
