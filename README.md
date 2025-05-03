@@ -1,4 +1,11 @@
 🏎️ F1 Racing Simulation 🏁
+
+¿Cómo Ejecutarlo? 
+1. Clona el repositorio en tu local: git clone https://github.com/meliza021/F1.git
+2. Instala dependencias con el comando: npm install
+3. Ejecuta el comando: node server.js
+4. ¡Listo, el proyecto está en ejecución! Ingresa a la siguiente dirección para ver el proyecto: http://localhost:3000
+
 📝 Descripción del Proyecto
 Este proyecto es una simulación interactiva de Fórmula 1 basada en tecnologías web modernas. Permite a los usuarios gestionar y personalizar su experiencia de carrera a través de un sistema dinámico de administración de circuitos, pilotos y vehículos. La aplicación está construida utilizando HTML, JavaScript y Web Components, con CSS para garantizar un diseño moderno y responsivo.
 ✨ Características Principales
