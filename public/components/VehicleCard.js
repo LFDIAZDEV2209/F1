@@ -50,7 +50,7 @@ class vehicleCard extends HTMLElement {
                         <span class="vehicle-card__value">${data.tireWear} %</span>
                     </div>
                 </div>
-                <button class="compare-btn">Comparar</button>
+                <button class="compare-btn primary-button">Comparar</button>
             </div>
         `;
         this.shadowRoot.querySelector('.compare-btn').addEventListener('click', () => {

@@ -91,18 +91,18 @@ function updateComparisonBar() {
       const v2 = vehicle2[prop];
       let superior = '';
       let difference = 0;
-
+    
       if (v1 > v2) {
         superior = vehicle1.name;
-        difference = v1 - v2;
+        difference = (v1 - v2).toFixed(2); // Redondear la diferencia a 2 decimales
       } else if (v1 < v2) {
         superior = vehicle2.name;
-        difference = v2 - v1;
+        difference = (v2 - v1).toFixed(2); // Redondear la diferencia a 2 decimales
       } else {
         superior = 'Ambos';
         difference = 0;
       }
-
+    
       return { superior, difference, v1, v2 };
     };
 
@@ -112,6 +112,7 @@ function updateComparisonBar() {
     const tireWearComparison = compare("tireWear");
 
     comparisonBar.innerHTML = `
+    <div class="comparison-bar__vehicles-container">
       <div class="comparison-bar__vehicle">
         <h3>${vehicle1.name}</h3>
         <span>Velocidad Máx.: ${vehicle1.speedMax} km/h</span>
@@ -126,15 +127,16 @@ function updateComparisonBar() {
         <span>Consumo: ${vehicle2.fuelConsumption} L/km</span>
         <span>Desgaste: ${vehicle2.tireWear} %</span>
       </div>
-
-      <div class="comparison-bar__results">
-        <h4>Comparación:</h4>
-        <p><strong>Velocidad Máx.:</strong> ${speedComparison.superior} es superior por ${speedComparison.difference} km/h</p>
-        <p><strong>Aceleración:</strong> ${accelerationComparison.superior} es superior por ${accelerationComparison.difference} s</p>
-        <p><strong>Consumo de Combustible:</strong> ${fuelComparison.superior} es superior por ${fuelComparison.difference} L/km</p>
-        <p><strong>Desgaste de Llantas:</strong> ${tireWearComparison.superior} es superior por ${tireWearComparison.difference} %</p>
-      </div>
-      <button id="exit-comparison">Salir</button>
+    </div>
+    <div class="comparison-bar__results">
+      
+    <h4>Comparación:</h4>
+      <p><strong>Velocidad Máx.:</strong> ${speedComparison.superior} es superior por ${speedComparison.difference} km/h</p>
+      <p><strong>Aceleración:</strong> ${accelerationComparison.superior} es superior por ${accelerationComparison.difference} s</p>
+      <p><strong>Consumo de Combustible:</strong> ${fuelComparison.superior} es superior por ${fuelComparison.difference} L/km</p>
+      <p><strong>Desgaste de Llantas:</strong> ${tireWearComparison.superior} es superior por ${tireWearComparison.difference} %</p>
+    </div>
+      <button id="exit-comparison" class="primary-button">Salir</button>
     `;
 
     document.getElementById("exit-comparison").addEventListener("click", exitComparisonMode);
