@@ -209,6 +209,89 @@ app.get('/api/vehicles', (req, res) => {
     });
 });
 
+// GET: obtener vehicle por id
+app.get('/api/vehicles/:id', (req, res) => {
+    const vehicleId = parseInt(req.params.id);
+    fs.readFile(vehiclesPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+
+        const vehicles = JSON.parse(data);
+        const vehicle = vehicles.find(vehicle => vehicle.id === vehicleId);
+
+        if (!vehicle) {
+            return res.status(404).json({ error: 'Piloto no encontrado' });
+        }
+
+        res.json(vehicle);
+    });
+});
+
+// POST: agregar un nuevo vehicle
+app.post('/api/vehicles', (req, res) => {
+    fs.readFile(vehiclesPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+
+        let vehicles = JSON.parse(data);
+        const maxId = Math.max(...vehicles.map(d => d.id), 0);
+        const newDriver = { id: maxId + 1, ...req.body };
+
+        vehicles.push(newDriver);
+
+        fs.writeFile(vehiclesPath, JSON.stringify(vehicles, null, 2), (err) => {
+            if (err) return res.status(500).json({ error: 'Error al guardar los datos' });
+            res.json(newDriver);
+        });
+    });
+});
+
+// PUT: Actualizar un vehicle
+app.put('/api/vehicles/:id', (req, res) => {
+    const vehicleId = parseInt(req.params.id);
+    const updatedDriver = req.body;
+
+    fs.readFile(vehiclesPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+
+        let vehicles = JSON.parse(data);
+        const index = vehicles.findIndex(vehicle => vehicle.id === vehicleId);
+
+        if (index === -1) {
+            return res.status(404).json({ error: 'Piloto no encontrado' });
+        }
+
+        // Asegura que el ID no se sobrescriba accidentalmente
+        vehicles[index] = { ...vehicles[index], ...updatedDriver, id: vehicleId };
+
+        fs.writeFile(vehiclesPath, JSON.stringify(vehicles, null, 2), err => {
+            if (err) return res.status(500).json({ error: 'Error al guardar los datos' });
+
+            res.json(vehicles[index]);
+        });
+    });
+});
+// DELETE: eliminar un vehicle
+app.delete("/api/vehicles/:id", (req, res) => {
+    const vehicleId = parseInt(req.params.id);
+
+    fs.readFile(vehiclesPath, "utf8", (err, data) => {
+        if (err) return res.status(500).json({ error: "Error al leer los datos" });
+
+        let vehicles = JSON.parse(data);
+        const index = vehicles.findIndex((vehicle) => vehicle.id === vehicleId);
+
+        if (index === -1) {
+            return res.status(404).json({ error: "Piloto no encontrado" });
+        }
+
+        vehicles.splice(index, 1); // Eliminar el piloto
+
+        fs.writeFile(vehiclesPath, JSON.stringify(vehicles, null, 2), (err) => {
+            if (err) return res.status(500).json({ error: "Error al guardar los cambios" });
+            res.status(200).json({ message: "Piloto eliminado correctamente" });
+        });
+    });
+});
+
 app.get('/api/power-unit', (req, res) => {
     fs.readFile(powerUnitPath, 'utf8', (err, data) => {
         if (err) return res.status(500).json({ error: 'Error al leer los datos' });
@@ -243,6 +326,10 @@ app.get('/admin/teams', (req, res) => {
 });
 app.get('/vehicles', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'vehicles.html'));
+});
+
+app.get('/admin/vehicles', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'admin-vehicles.html'));
 });
 app.listen(PORT, () => {
     console.log(`Servidor en http://localhost:${PORT}`);

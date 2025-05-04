@@ -1,4 +1,4 @@
-class VehicleCard extends HTMLElement {
+class AdminVehicleCard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });
@@ -20,7 +20,7 @@ class VehicleCard extends HTMLElement {
         };
 
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="/css/components/VehicleCard.css">
+            <link rel="stylesheet" href="/css/components/AdminVehicleCard.css">
             <div class="vehicle-card">
                 <div class="vehicle-card__header">
                     <h2 class="vehicle-card__name">${data.name}</h2>
@@ -51,16 +51,42 @@ class VehicleCard extends HTMLElement {
                     </div>
                 </div>
                 <button class="compare-btn primary-button">Comparar</button>
+                <div class="card__admin-card-actions">
+                    <a href="#" class="admin-card-actions__edit-button primary-button" data-vehicle-id="${data.id}">Editar</a>
+                    <a href="#" class="admin-card-actions__remove-button secondary-button" data-vehicle-id="${data.id}">Eliminar</a>
+                </div>
             </div>
         `;
         this.shadowRoot.querySelector('.compare-btn').addEventListener('click', () => {
-            this.dispatchEvent(new CustomEvent('compare', { 
-                detail: data, 
-                bubbles: true, 
-                composed: true 
+            this.dispatchEvent(new CustomEvent('compare', {
+                detail: data,
+                bubbles: true,
+                composed: true
             }));
         });
+
+        this.shadowRoot.querySelector(".admin-card-actions__edit-button")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const vehicleId = e.target.dataset.vehicleId;
+                this.dispatchEvent(new CustomEvent("edit-vehicle", {
+                    detail: { vehicleId },
+                    bubbles: true, // importante para que llegue al document
+                    composed: true // necesario para salir del shadow DOM
+                }));
+            });
+
+        this.shadowRoot.querySelector(".admin-card-actions__remove-button")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const vehicleId = e.target.dataset.vehicleId;
+                this.dispatchEvent(new CustomEvent("remove-vehicle", {
+                    detail: { vehicleId },
+                    bubbles: true, // importante para que llegue al document
+                    composed: true // necesario para salir del shadow DOM
+                }));
+            });
     }
 }
 
-customElements.define("vehicle-card", VehicleCard);
+customElements.define("admin-vehicle-card", AdminVehicleCard);

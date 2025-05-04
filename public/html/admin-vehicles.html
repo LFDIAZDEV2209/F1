@@ -6,8 +6,9 @@
     <title>Card Estilo F1</title>
     <link rel="stylesheet" href="/css/vehicle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script type="module" src="/components/VehicleCard.js"></script>
-    <script src="/js/vehicle.js"></script>
+    <script type="module" src="/components/AdminVehicleCard.js"></script>
+    <script type="module" src="/components/DeleteVehicleModal.js"></script>
+    <script src="/js/admin-vehicle.js"></script>
 </head>
 
 <body>
@@ -17,9 +18,9 @@
                 <img src="/img/F1_2025_Logo-removebg-preview.png" alt="Formula 1 Logo">
             </div>
             <nav class="main-header__main-nav">
-                <a href="/dashboard/" class="main-nav__item">Dashboard</a>
-                <a href="/drivers/" class="main-nav__item">Drivers</a>
-                <a href="/teams/" class="main-nav__item">Teams</a>
+                <a href="/admin/dashboard/" class="main-nav__item">Dashboard</a>
+                <a href="/admin/drivers/" class="main-nav__item">Drivers</a>
+                <a href="/admin/teams/" class="main-nav__item">Teams</a>
                 <a href="#" class="main-nav__item">Circuits</a>
                 <a href="#" class="main-nav__item">Vehicles</a>
                 <a href="#" class="main-nav__item">Simulation</a>
@@ -44,7 +45,12 @@
 
             </section>
             <div id="comparison-bar" class="comparison-bar hidden"></div>
+            <a href="#" class="page-content__add-vehicle-button primary-button">
+                <i class="fa-solid fa-plus primary-button__content"></i>
+                <span class="primary-button__content">Vehículo</span>
+            </a>
         </main>
+        <delete-vehicle-modal></delete-vehicle-modal>
 
 </body>
 
