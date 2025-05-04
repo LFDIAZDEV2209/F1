@@ -1,131 +1,179 @@
+@font-face {
+  font-family: "carrera";
+  src: url("../campus/CAMPUS PERSONAL USE.ttf");
+}
+
+
 :host {
-    display: block;
-    margin-bottom: 2rem;
-    font-family: 'Titillium Web', sans-serif;
+  display: block;
+  margin-bottom: 2rem;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.team-card {
+  font-family: "carrera";
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: conic-gradient(transparent,
+      #000000,
+      #2c2c2c,
+      #7f7f7f,
+      #ff0000,
+      transparent 30%);
+  animation: rotate 4s linear infinite;
+}
+
+.team-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 4px;
+  top: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  background: white;
+  border-radius: 12px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
   }
-  
-  .team-card {
-    border: 1px solid #e2e2e2;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: white;
-    position: relative;
-  }
-  
-  .team-card__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    gap: 1rem;
-    border-bottom: 1px solid #e2e2e2;
-    position: relative;
-  }
-  
-  .team-card__position {
-    font-size: 2.5rem;
-    font-weight: 700;
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  
-  .team-card__name {
-    margin-left: 4rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-  }
-  
-  .team-card__name-text {
-    margin-left: 0.5rem;
-  }
-  
-  .team-card__color-bar {
-    width: 6px;
-    height: 2rem;
-    display: inline-block;
-    margin-right: 8px;
-  }
-  
-  .team-card__logo {
-    height: 100%;
-    margin-left: auto;
-  }
-  
-  .team-card__logo-img {
-    height: 100%;
-  }
-  
-  .team-card__points {
-    font-size: 1.2rem;
-    font-weight: 700;
-    background-color: black;
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-  }
-  
-  .team-card__points-label {
-    font-size: 0.8rem;
-    display: block;
-    text-align: center;
-  }
-  
-  .team-card__drivers {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem;
-  }
-  
-  .team-card__driver {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    width: 48%;
-  }
-  
-  .team-card__driver-info {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .team-card__driver-name {
-    font-weight: 700;
-  }
-  
-  .team-card__driver-lastname {
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  
-  .team-card__driver-photo {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 0.5rem;
-  }
-  
-  .team-card__car-image {
-    width: 100%;
-    height: 100%;
-    padding: 1rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .grid-bg {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path stroke="%23ddd" fill="none" d="M0,0 L20,0 M0,5 L20,5 M0,10 L20,10 M0,15 L20,15 M0,20 L20,20 M0,0 L0,20 M5,0 L5,20 M10,0 L10,20 M15,0 L15,20 M20,0 L20,20"/></svg>');
-  }
-  
+}
+
+.team-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid #e2e2e2;
+  position: relative;
+}
+
+.team-card__position {
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.team-card__name {
+  margin-left: 4rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.team-card__name-text {
+  margin-left: 0.5rem;
+}
+
+.team-card__color-bar {
+  width: 6px;
+  height: 2rem;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.team-card__logo {
+  height: 100%;
+  margin-left: auto;
+}
+
+.team-card__logo-img {
+  height: 100%;
+}
+
+.team-card__points {
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+}
+
+.team-card__points-label {
+  font-size: 0.8rem;
+  display: block;
+  text-align: center;
+}
+
+.team-card__drivers {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.team-card__driver {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  width: 48%;
+}
+
+.team-card__driver-info {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.team-card__driver-name {
+  font-weight: 700;
+}
+
+.team-card__driver-lastname {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.team-card__driver-photo {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0.5rem;
+}
+
+.team-card__car-image {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-bg {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path stroke="%23ddd" fill="none" d="M0,0 L20,0 M0,5 L20,5 M0,10 L20,10 M0,15 L20,15 M0,20 L20,20 M0,0 L0,20 M5,0 L5,20 M10,0 L10,20 M15,0 L15,20 M20,0 L20,20"/></svg>');
+}
