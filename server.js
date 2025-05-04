@@ -12,6 +12,7 @@ const driversPath = path.join(__dirname, 'api', 'driver.json');
 const vehiclesPath = path.join(__dirname, 'api', 'vehicle.json');
 const teamsPath = path.join(__dirname, 'api', 'team.json');
 const countriesPath = path.join(__dirname, 'api', 'country.json');
+const powerUnitPath = path.join(__dirname, 'api', 'power-unit.json');
 
 // GET: obtener todos los drivers
 app.get('/api/drivers', (req, res) => {
@@ -208,6 +209,13 @@ app.get('/api/vehicles', (req, res) => {
     });
 });
 
+app.get('/api/power-unit', (req, res) => {
+    fs.readFile(powerUnitPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+        res.json(JSON.parse(data));
+    });
+});
+
 // URLS
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'inicio.html'));
@@ -233,7 +241,9 @@ app.get('/teams', (req, res) => {
 app.get('/admin/teams', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'admin-teams.html'));
 });
-
+app.get('/vehicles', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'vehicles.html'));
+});
 app.listen(PORT, () => {
     console.log(`Servidor en http://localhost:${PORT}`);
 });

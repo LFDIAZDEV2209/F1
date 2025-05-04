@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Card Estilo F1</title>
-    <link rel="stylesheet" href="/css/driver.css">
+    <link rel="stylesheet" href="/css/vehicle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script type="module" src="/components/DriverCard.js"></script>
-    <script src="/js/driver.js"></script>
+    <script type="module" src="/components/VehicleCard.js"></script>
+    <script src="/js/vehicle.js"></script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
                 <a href="#" class="main-nav__item">Drivers</a>
                 <a href="/teams/" class="main-nav__item">Teams</a>
                 <a href="#" class="main-nav__item">Circuits</a>
-                <a href="/vehicles/" class="main-nav__item">Vehicles</a>
+                <a href="#" class="main-nav__item">Vehicles</a>
                 <a href="#" class="main-nav__item">Simulation</a>
             </nav>
         </header>
@@ -29,22 +29,21 @@
             <div class="page-content__main-title">
                 <span>F1 Drivers 2025</span>
             </div>
-            <section class="page-content__drivers-section">
-                <div class="drivers-section__subtitle">
-                    🏎 Check out this season's official F1 line-up. Full breakdown of drivers, points and current
-                    positions.
-                    Follow your favourite F1 drivers on and off the track.
+            <section class="page-content__vehicles-section">
+                <div class="vehicles-section__subtitle">
+                    Inspect and compare registered vehicles
                 </div>
-                <div class="drivers-section__search-container">
+                <div class="vehicles-section__search-container">
                     <input type="text" id="search-input" class="search-container__search-input"
-                        placeholder="Search for a driver...">
+                        placeholder="Search for a vehicle...">
                     <span class="search-container__loading-spinner hidden">
                         <i class="fas fa-spinner fa-spin"></i>
                     </span>
                 </div>
-                <div id="cards-container" class="drivers-section__cards-container"></div>
+                <div id="cards-container" class="vehicles-section__cards-container"></div>
 
             </section>
+            <div id="comparison-bar" class="comparison-bar hidden"></div>
         </main>
 
 </body>

@@ -1,7 +1,6 @@
 [
     {
         "id": 1,
-        "team": 1,
         "name": "Alpine",
         "imageUrl": "/img/vehicles/alpine.avif",
         "powerUnit": 1,
@@ -10,13 +9,12 @@
         "performanceSpecifications": {
             "speedMax": 340,
             "acceleration": 2.5,
-            "fuilConsumption": 2.5,
+            "fuelConsumption": 2.5,
             "tireWear": 1.5
         }
     },
     {
         "id": 2,
-        "team": 2,
         "name": "Haas",
         "imageUrl": "/img/vehicles/haas.avif",
         "powerUnit": 2,
@@ -25,13 +23,12 @@
         "performanceSpecifications": {
             "speedMax": 320,
             "acceleration": 2.3,
-            "fuilConsumption": 2.1,
+            "fuelConsumption": 2.1,
             "tireWear": 1.3
         }
     },
     {
         "id": 3,
-        "team": 3,
         "name": "Mercedes",
         "imageUrl": "/img/vehicles/mercedes.avif",
         "powerUnit": 3,
@@ -40,13 +37,12 @@
         "performanceSpecifications": {
             "speedMax": 330,
             "acceleration": 2.4,
-            "fuilConsumption": 2.2,
+            "fuelConsumption": 2.2,
             "tireWear": 1.4
         }
     },
     {
         "id": 4,
-        "team": 4,
         "name": "Williams",
         "imageUrl": "/img/vehicles/williams.avif",
         "powerUnit": 3,
@@ -55,13 +51,12 @@
         "performanceSpecifications": {
             "speedMax": 335,
             "acceleration": 2.2,
-            "fuilConsumption": 2.2,
+            "fuelConsumption": 2.2,
             "tireWear": 1.3
         }
     },
     {
         "id": 5,
-        "team": 5,
         "name": "Aston Martin",
         "imageUrl": "/img/vehicles/aston-martin.avif",
         "powerUnit": 3,
@@ -70,13 +65,12 @@
         "performanceSpecifications": {
             "speedMax": 345,
             "acceleration": 2.4,
-            "fuilConsumption": 2.5,
+            "fuelConsumption": 2.5,
             "tireWear": 1.6
         }
     },
     {
         "id": 6,
-        "team": 6,
         "name": "Kick Sauber",
         "imageUrl": "/img/vehicles/kick-sauber.avif",
         "powerUnit": 2,
@@ -85,13 +79,12 @@
         "performanceSpecifications": {
             "speedMax": 345,
             "acceleration": 2.4,
-            "fuilConsumption": 2.5,
+            "fuelConsumption": 2.5,
             "tireWear": 1.6
         }
     },
     {
         "id": 7,
-        "team": 7,
         "name": "Racing Bulls",
         "imageUrl": "/img/vehicles/racing-bulls.avif",
         "powerUnit": 4,
@@ -100,13 +93,12 @@
         "performanceSpecifications": {
             "speedMax": 340,
             "acceleration": 2.7,
-            "fuilConsumption": 2.5,
+            "fuelConsumption": 2.5,
             "tireWear": 1.5
         }
     },
     {
         "id": 8,
-        "team": 8,
         "name": "Ferrari",
         "imageUrl": "/img/vehicles/ferrari.avif",
         "powerUnit": 2,
@@ -115,13 +107,12 @@
         "performanceSpecifications": {
             "speedMax": 345,
             "acceleration": 2.6,
-            "fuilConsumption": 2.4,
+            "fuelConsumption": 2.4,
             "tireWear": 1.6
         }
     },
     {
         "id": 9,
-        "team": 9,
         "name": "McLaren",
         "imageUrl": "/img/vehicles/mclaren.avif",
         "powerUnit": 3,
@@ -130,13 +121,12 @@
         "performanceSpecifications": {
             "speedMax": 340,
             "acceleration": 2.7,
-            "fuilConsumption": 2.6,
+            "fuelConsumption": 2.6,
             "tireWear": 1.4
         }
     },
     {
         "id": 10,
-        "team": 10,
         "name": "Red Bull Racing",
         "imageUrl": "/img/vehicles/red-bull-racing.avif",
         "powerUnit": 4,
@@ -145,7 +135,7 @@
         "performanceSpecifications": {
             "speedMax": 345,
             "acceleration": 2.4,
-            "fuilConsumption": 2.3,
+            "fuelConsumption": 2.3,
             "tireWear": 1.4
         }
     }
