@@ -61,26 +61,26 @@ async function fetchDrivers() {
 
 
 // Function to render teams
-async function renderTeams() {
-  console.log("render teams")
+async function renderTeams(query = "") {
+  searchInputLoadingIcon.classList.remove("hidden");
   const cardsContainer = document.getElementById('cards-container');
-
   if (!cardsContainer) {
     console.error('Cards container not found');
     return;
   }
-
+  cardsContainer.innerHTML = ""; // Limpiar contenedor
   try {
-    const drivers= await fetchDrivers();
+    const drivers = await fetchDrivers();
     const vehicles = await fetchVehicles();
     const teams = await fetchTeams();
 
-    // Sort vehicles by points in descending order
-    vehicles.sort((a, b) => b.points - a.points);
+    const filteredTeams = teams.filter((team) =>
+      `${team.name}`.toLowerCase().includes(query)
+    );
 
     // Create team cards
-    teams.forEach((team) => {
-      
+    filteredTeams.forEach((team) => {
+
       const teamPilots = drivers.filter(driver => driver.team === team.id);
       const teamPilotsWithVehicle = teamPilots.map(pilot => {
         const vehicle = vehicles.find(vehicle => vehicle.pilot == pilot.id);
@@ -98,10 +98,29 @@ async function renderTeams() {
     });
   } catch (error) {
     console.error('Error rendering teams:', error);
+    cardsContainer.innerHTML =
+      '<p class="error-message">Error al cargar los datos de los equipos. Por favor intenta nuevamente más tarde.</p>';
+  } finally {
+    searchInputLoadingIcon.classList.add("hidden");
   }
 }
 
+let debounceTimeout;
+let searchInputLoadingIcon;
+
+
 // Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
+  const searchInput = document.querySelector(".search-container__search-input");
+  searchInputLoadingIcon = document.querySelector(
+    ".search-container__loading-spinner"
+  );
+  searchInput.addEventListener("input", () => {
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      const query = searchInput.value.trim().toLowerCase();
+      renderTeams(query);
+    }, 500); // espera 500ms después de la última tecla
+  });
   renderTeams();
 }); 

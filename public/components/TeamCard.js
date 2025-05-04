@@ -52,7 +52,7 @@ export default class TeamCard extends HTMLElement {
 
   renderDrivers(driversData) {
     if (!driversData || driversData.length === 0) {
-      return '';
+      return '<p class="team-card__no-drivers">Este equipo no tiene pilotos registrados.</p>';
     }
 
     return driversData.map(driver => {

@@ -1,149 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>F1 Teams 2025</title>
   <!-- Add Titillium Web font from Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
   <!-- Link CSS -->
-  <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-  <!-- F1 Header with navigation -->
-  <header class="f1-header">
-    <div class="f1-logo-container">
-      <img src="https://www.formula1.com/etc/designs/fom-website/images/f1_logo.svg" alt="Formula 1 Logo" class="f1-logo">
-    </div>
-    <nav class="main-nav">
-              <a href="/dashboard/" class="main-nav__item">Dashboard</a>
-              <a href="/drivers/" class="main-nav__item">Drivers</a>
-              <a href="#" class="main-nav__item">Teams</a>
-              <a href="#" class="main-nav__item">Circuits</a>
-              <a href="#" class="main-nav__item">Vehicles</a>
-              <a href="#" class="main-nav__item">Simulation</a>
-            </nav>
-  </header>
+  <link rel="stylesheet" href="../css/teams.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <h1>F1 Teams 2025</h1>
-  
-  <!-- Description box -->
-  <div class="description-box">
-    Discover everything you need to know about this year's Formula 1 teams - drivers, podium finishes, points earned and championship titles.
-  </div>
-  
-  <!-- Team cards container -->
-  <div id="cards-container"></div>
-  
-  <!-- Scripts -->
-  <script src="../js/vehiclesData.js"></script>
-  <script type="module" src="../js/teams.js"></script>
-  <script type="module" src="/components/TeamCard.js"></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <header class="app-container__main-header">
+      <div class="main-header__logo">
+        <img src="/img/F1_2025_Logo-removebg-preview.png" alt="Formula 1 Logo">
+      </div>
+      <nav class="main-header__main-nav">
+        <a href="/dashboard/" class="main-nav__item">Dashboard</a>
+        <a href="/drivers/" class="main-nav__item">Drivers</a>
+        <a href="#" class="main-nav__item">Teams</a>
+        <a href="#" class="main-nav__item">Circuits</a>
+        <a href="#" class="main-nav__item">Vehicles</a>
+        <a href="#" class="main-nav__item">Simulation</a>
+      </nav>
+    </header>
+    <main class="page-content">
+      <div class="page-content__main-title">
+        <span>F1 Teams 2025</span>
+      </div>
+      <section class="page-content__teams-section">
+        <div class="teams-section__subtitle">
+          Discover everything you need to know about this year's Formula 1 teams - drivers, podium finishes, points
+          earned and championship titles.
+        </div>
+        <div class="teams-section__search-container">
+          <input type="text" id="search-input" class="search-container__search-input"
+            placeholder="Search for a team...">
+          <span class="search-container__loading-spinner hidden">
+            <i class="fas fa-spinner fa-spin"></i>
+          </span>
+        </div>
+        <div id="cards-container" class="teams-section__cards-container"></div>
+
+      </section>
+    </main>
+
 </body>
+<!-- Scripts -->
+<script src="../js/vehiclesData.js"></script>
+<script type="module" src="../js/teams.js"></script>
+<script type="module" src="/components/TeamCard.js"></script>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Card Estilo F1</title>
-  <link rel="stylesheet" href="/css/teams.css">
-  <script type="module" src="/js/driver.js" defer></script>
-</head>
-<body>
-    <div class="app-container">
-        <header class="main-header">
-            <div class="logo">
-                <img src="/img/F1_2025_Logo-removebg-preview.png" alt="Formula 1 Logo">
-               
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li data-section="dashboard" >Dashboard</li>
-                    <li data-section="drivers">Drivers</li>
-                    <li data-section="teams">Teams</li>
-                    <li data-section="circuits">Circuits</li>
-                    <li data-section="vehicles">Vehicles</li>
-                    <li data-section="simulation">Simulation</li>
-                </ul>
-            </nav>
-      
-        </header>
-        <div class="header-bar"></div>
-
-        <div class="main-title">
-          <span>F1 Drivers 2025</span>
-        </div>
-      
-        <div class="subtitle">
-            🏎 Check out this season's official F1 line-up. Full breakdown of drivers, points and current positions. Follow your favourite F1 drivers on and off the track.
-        </div>
-
-        <div class="container">
-
-            
-            <div class="card">
-              <div class="rank">1</div>
-              <div class="points"><span>188</span>PTS</div>
-              <div class="team" style="color: #FF8000;">
-                McLaren
-                <img class="team-logo" src="/img/mclarenlogo.png" alt="McLaren Logo">
-              </div>
-              <div class="drivers">
-                <div class="driver">
-                  <img src="/img/piastri.avif" alt="Oscar Piastri">
-                  <div>Oscar <strong>PIASTRI</strong></div>
-                </div>
-                <div class="driver">
-                  <img src="/img/norris.avif" alt="Lando Norris">
-                  <div>Lando <strong>NORRIS</strong></div>
-                </div>
-              </div>
-              <div class="car">
-                <img src="/img/mclarencarro.avif" alt="McLaren Car">
-              </div>
-            </div>
-        
-        
-            <div class="card">
-              <div class="rank">2</div>
-              <div class="points"><span>111</span>PTS</div>
-              <div class="team" style="color: #055048a8;">
-                Mercedes
-                <img class="team-logo" src="/img/mercedezlogo.webp" alt="Mercedes Logo">
-              </div>
-              <div class="drivers">
-                <div class="driver">
-                  <img src="/img/russell.avif" alt="George Russell">
-                  <div>George <strong>RUSSELL</strong></div>
-                </div>
-                <div class="driver">
-                  <img src="/img/antonelli.avif" alt="Kimi Antonelli">
-                  <div>Kimi <strong>ANTONELLI</strong></div>
-                </div>
-              </div>
-              <div class="car">
-                <img src="/img/mercedezcar.avif" alt="Mercedes Car">
-              </div>
-            </div> -->
