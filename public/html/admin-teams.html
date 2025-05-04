@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>F1 Teams 2025</title>
+    <!-- Add Titillium Web font from Google Fonts -->
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="/css/teams.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script type="module" src="/js/admin-teams.js" defer></script>
+    <script type="module" src="/components/AdminTeamCard.js" defer></script>
+    <script type="module" src="/components/TeamFormModal.js"></script>
+
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-container__main-header">
+            <div class="main-header__logo">
+                <img src="/img/F1_2025_Logo-removebg-preview.png" alt="Formula 1 Logo">
+            </div>
+            <nav class="main-header__main-nav">
+                <a href="/admin/dashboard/" class="main-nav__item">Dashboard</a>
+                <a href="/admin/drivers/" class="main-nav__item">Drivers</a>
+                <a href="#" class="main-nav__item">Teams</a>
+                <a href="#" class="main-nav__item">Circuits</a>
+                <a href="#" class="main-nav__item">Vehicles</a>
+                <a href="#" class="main-nav__item">Simulation</a>
+            </nav>
+        </header>
+        <main class="page-content">
+            <div class="page-content__main-title">
+                <span>F1 Teams 2025</span>
+            </div>
+            <section class="page-content__teams-section">
+                <div class="teams-section__subtitle">
+                    Discover everything you need to know about this year's Formula 1 teams - drivers, podium finishes,
+                    points
+                    earned and championship titles.
+                </div>
+                <div class="teams-section__search-container">
+                    <input type="text" id="search-input" class="search-container__search-input"
+                        placeholder="Search for a team...">
+                    <span class="search-container__loading-spinner hidden">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </span>
+                </div>
+                <div id="cards-container" class="teams-section__cards-container"></div>
+
+            </section>
+            <a href="#" class="page-content__add-team-button primary-button">
+                <i class="fa-solid fa-plus primary-button__content"></i>
+                <span class="primary-button__content">Equipo</span>
+            </a>
+        </main>
+        <team-form-modal></team-form-modal>
+</body>
+
+</html>

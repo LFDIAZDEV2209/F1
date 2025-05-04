@@ -103,7 +103,7 @@ app.delete("/api/drivers/:id", (req, res) => {
     });
   });
 
-
+// GET: obtener todos los teams
 app.get('/api/teams', (req, res) => {
     fs.readFile(teamsPath, 'utf8', (err, data) => {
         if (err) return res.status(500).json({ error: 'Error al leer los datos' });
@@ -146,6 +146,9 @@ app.get('/admin/drivers', (req, res) => {
 
 app.get('/teams', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'teams.html'));
+});
+app.get('/admin/teams', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'admin-teams.html'));
 });
 
 app.listen(PORT, () => {

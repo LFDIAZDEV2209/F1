@@ -189,7 +189,7 @@ body {
   font-weight: 600;
 }
 
-.page-content__add-driver-button {
+.page-content__add-team-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -210,8 +210,16 @@ body {
   background-color: white;
 }
 
+.primary-button .primary-button__content {
+  color: red;
+}
+
 .primary-button:hover {
   border: 2px solid white;
   color: white;
   background-color: red;
+}
+
+.primary-button:hover .primary-button__content {
+  color: white;
 }

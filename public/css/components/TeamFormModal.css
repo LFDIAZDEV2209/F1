@@ -29,29 +29,29 @@
     overflow-y: auto;
 }
 
-.driver-form {
+.team-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
 
-.driver-form__title {
+.team-form__title {
     color: red;
 }
 
-.driver-form__field {
+.team-form__field {
     display: flex;
     flex-direction: column;
 }
 
-.driver-form__label {
+.team-form__label {
     font-weight: bold;
     margin-bottom: 0.25rem;
     color: black;
 }
 
-.driver-form__input,
-.driver-form__select {
+.team-form__input,
+.team-form__select {
     border-radius: 4px;
     font-size: 16px;
     padding: 12px;
@@ -60,8 +60,8 @@
     transition: background-color 0.3s ease;
 }
 
-.driver-form__input:focus,
-.driver-form__select:focus {
+.team-form__input:focus,
+.team-form__select:focus {
     outline: none;
     background-color: rgb(255, 218, 218);
 }
@@ -90,7 +90,7 @@
 }
 
 
-.driver-form__error {
+.team-form__error {
     color: rgb(65, 65, 65);
     font-size: 0.9rem;
     margin-top: -0.5rem;
