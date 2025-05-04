@@ -123,4 +123,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500); // espera 500ms después de la última tecla
     });
     renderTeams();
-}); 
+});
+
+// Lógica para abrir el formulario de equipo con la finalidad de editar
+document.addEventListener("edit-team", async (e) => {
+    console.log("edit");
+    const teamId = parseInt(e.detail.teamId);
+
+    const modalEl = document.querySelector("team-form-modal");
+    const modal = modalEl.shadowRoot.querySelector(".modal");
+    const modalTitle = modal.querySelector('.team-form__title');
+
+    const teamRes = await fetch(`/api/teams/${teamId}`);
+    const team = await teamRes.json();
+
+    const form = modalEl.shadowRoot.querySelector("#teamForm");
+    form.querySelector('[name="name"]').value = team.name;
+    form.querySelector('[name="country"]').value = team.country;
+    form.querySelector('[name="color"]').value = team.color;
+
+    form.dataset.editId = team.id;
+    modalTitle.textContent = "Editar Equipo";
+    modal.classList.add("active");
+});
+
+document.addEventListener("remove-team", async (e) => {
+    console.log("remove");
+    const teamId = parseInt(e.detail.teamId);
+    const modalEl = document.querySelector("delete-team-modal");
+    modalEl.show(teamId);
+});
+
+window.renderTeams = renderTeams; 

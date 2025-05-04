@@ -79,7 +79,7 @@ class TeamFormModal extends HTMLElement {
                     </div>
                     <div class="team-form__field">
                         <label class="team-form__label" for="color">Color del equipo:</label>
-                        <input class="team-form__input" type="color" name="color" id="color" value="#000000" required />
+                        <input class="team-form__input --input-color" type="color" name="color" id="color" value="#000000" required />
                     </div>
                     <button class="team-form__submit primary-button" type="submit">Enviar</button>
                     <div class="team-form__error" id="formError"></div>
@@ -130,16 +130,14 @@ class TeamFormModal extends HTMLElement {
                 });
                 delete formEl.dataset.editId;
             } else {
-                const nextId = Math.max(...teams.map(team => team.id)) + 1;
                 const newTeam = {
-                    id: nextId,
                     name,
-                    imageUrl: '/img/teams/default-logo.png',
+                    imageUrl: '/img/teams/default-logo.jpg',
                     country,
                     color
                 };
                 // Enviar la data como JSON al servidor
-                fetch('/api/teams', {
+                await fetch('/api/teams', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(newTeam)
@@ -147,8 +145,10 @@ class TeamFormModal extends HTMLElement {
             }
             formEl.reset();
             modalEl.classList.remove('active');
-            if (typeof window.loadTeams === "function") {
-                window.loadTeams(); // Recargar la lista si está disponible globalmente
+            if (typeof window.renderTeams === "function") {
+                window.renderTeams(); // Recargar la lista si está disponible globalmente
+            } else {
+                console.log("no hay render teams")
             }
         });
     }

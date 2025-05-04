@@ -53,10 +53,13 @@
   .team-card__logo {
     height: 100%;
     margin-left: auto;
+    max-width: 96px;
+    max-height: 96px;
   }
   
   .team-card__logo-img {
     height: 100%;
+    width: 100%;
   }
   
   .team-card__points {

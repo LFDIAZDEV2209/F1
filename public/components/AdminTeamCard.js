@@ -52,7 +52,31 @@ export default class AdminTeamCard extends HTMLElement {
             </div>
         </div>
       `;
+
+        this.shadowRoot.querySelector(".admin-card-actions__edit-button")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const teamId = e.target.dataset.teamId;
+                this.dispatchEvent(new CustomEvent("edit-team", {
+                    detail: { teamId },
+                    bubbles: true, // importante para que llegue al document
+                    composed: true // necesario para salir del shadow DOM
+                }));
+            });
+
+        this.shadowRoot.querySelector(".admin-card-actions__remove-button")
+            .addEventListener("click", (e) => {
+                e.preventDefault();
+                const teamId = e.target.dataset.teamId;
+                this.dispatchEvent(new CustomEvent("remove-team", {
+                    detail: { teamId },
+                    bubbles: true, // importante para que llegue al document
+                    composed: true // necesario para salir del shadow DOM
+                }));
+            });
     }
+
+
 
     renderDrivers(driversData) {
         if (!driversData || driversData.length === 0) {
@@ -78,8 +102,8 @@ export default class AdminTeamCard extends HTMLElement {
           </div>
         `;
         }).join('');
-    }
 
+    }
 }
 
 customElements.define('admin-team-card', AdminTeamCard);

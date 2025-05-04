@@ -9,17 +9,15 @@ class DriverFormModal extends HTMLElement {
         this.shadowRoot.innerHTML = `${style}<div class="modal"><p class="modal__loading">Cargando datos...</p></div>`;
 
         try {
-            const [countriesRes, teamsRes, driverRes] = await Promise.all([
+            const [countriesRes, teamsRes] = await Promise.all([
                 fetch("/api/countries"),
                 fetch("/api/teams"),
-                fetch("/api/drivers")
             ]);
 
             const countries = await countriesRes.json();
             const teams = await teamsRes.json();
-            const drivers = await driverRes.json();
 
-            this.renderForm(countries, teams, drivers);
+            this.renderForm(countries, teams);
         } catch (error) {
             this.shadowRoot.innerHTML = `${style}<div class="modal"><p class="modal__error">Error cargando datos</p></div>`;
             console.error("Error al cargar JSON:", error);
@@ -62,7 +60,7 @@ class DriverFormModal extends HTMLElement {
         });
     }
 
-    renderForm(countries, teams, drivers) {
+    renderForm(countries, teams) {
         const form = `
         <div class="modal" style="display: none">
             <div class="modal__content">
@@ -181,9 +179,7 @@ class DriverFormModal extends HTMLElement {
                 });
                 delete formEl.dataset.editId;
             } else {
-                const nextId = Math.max(...drivers.map(driver => driver.id)) + 1;
                 const newDriver = {
-                    id: nextId,
                     name,
                     lastName,
                     imageUrl: '/img/drivers/default.png',
@@ -193,7 +189,7 @@ class DriverFormModal extends HTMLElement {
                     points
                 };
                 // Enviar la data como JSON al servidor
-                fetch('/api/drivers', {
+                await fetch('/api/drivers', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(newDriver)

@@ -83,31 +83,114 @@ app.put('/api/drivers/:id', (req, res) => {
 // DELETE: eliminar un driver
 app.delete("/api/drivers/:id", (req, res) => {
     const driverId = parseInt(req.params.id);
-  
+
     fs.readFile(driversPath, "utf8", (err, data) => {
-      if (err) return res.status(500).json({ error: "Error al leer los datos" });
-  
-      let drivers = JSON.parse(data);
-      const index = drivers.findIndex((driver) => driver.id === driverId);
-  
-      if (index === -1) {
-        return res.status(404).json({ error: "Piloto no encontrado" });
-      }
-  
-      drivers.splice(index, 1); // Eliminar el piloto
-  
-      fs.writeFile(driversPath, JSON.stringify(drivers, null, 2), (err) => {
-        if (err) return res.status(500).json({ error: "Error al guardar los cambios" });
-        res.status(200).json({ message: "Piloto eliminado correctamente" });
-      });
+        if (err) return res.status(500).json({ error: "Error al leer los datos" });
+
+        let drivers = JSON.parse(data);
+        const index = drivers.findIndex((driver) => driver.id === driverId);
+
+        if (index === -1) {
+            return res.status(404).json({ error: "Piloto no encontrado" });
+        }
+
+        drivers.splice(index, 1); // Eliminar el piloto
+
+        fs.writeFile(driversPath, JSON.stringify(drivers, null, 2), (err) => {
+            if (err) return res.status(500).json({ error: "Error al guardar los cambios" });
+            res.status(200).json({ message: "Piloto eliminado correctamente" });
+        });
     });
-  });
+});
 
 // GET: obtener todos los teams
 app.get('/api/teams', (req, res) => {
     fs.readFile(teamsPath, 'utf8', (err, data) => {
         if (err) return res.status(500).json({ error: 'Error al leer los datos' });
         res.json(JSON.parse(data));
+    });
+});
+
+// GET: obtener team por id
+app.get('/api/teams/:id', (req, res) => {
+    const teamId = parseInt(req.params.id);
+    fs.readFile(teamsPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+
+        const teams = JSON.parse(data);
+        const team = teams.find(team => team.id === teamId);
+
+        if (!team) {
+            return res.status(404).json({ error: 'Piloto no encontrado' });
+        }
+
+        res.json(team);
+    });
+});
+
+// POST: agregar un nuevo team
+app.post('/api/teams', (req, res) => {
+    fs.readFile(teamsPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+
+        let teams = JSON.parse(data);
+        const maxId = Math.max(...teams.map(d => d.id), 0);
+        const newTeam = { id: maxId + 1, ...req.body };
+
+        teams.push(newTeam);
+
+        fs.writeFile(teamsPath, JSON.stringify(teams, null, 2), (err) => {
+            if (err) return res.status(500).json({ error: 'Error al guardar los datos' });
+            res.json(newTeam);
+        });
+    });
+});
+
+// PUT: Actualizar un team
+app.put('/api/teams/:id', (req, res) => {
+    const teamId = parseInt(req.params.id);
+    const updatedTeam = req.body;
+
+    fs.readFile(teamsPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+
+        let teams = JSON.parse(data);
+        const index = teams.findIndex(team => team.id === teamId);
+
+        if (index === -1) {
+            return res.status(404).json({ error: 'Piloto no encontrado' });
+        }
+
+        // Asegura que el ID no se sobrescriba accidentalmente
+        teams[index] = { ...teams[index], ...updatedTeam, id: teamId };
+
+        fs.writeFile(teamsPath, JSON.stringify(teams, null, 2), err => {
+            if (err) return res.status(500).json({ error: 'Error al guardar los datos' });
+
+            res.json(teams[index]);
+        });
+    });
+});
+// DELETE: eliminar un team
+app.delete("/api/teams/:id", (req, res) => {
+    const teamId = parseInt(req.params.id);
+
+    fs.readFile(teamsPath, "utf8", (err, data) => {
+        if (err) return res.status(500).json({ error: "Error al leer los datos" });
+
+        let teams = JSON.parse(data);
+        const index = teams.findIndex((team) => team.id === teamId);
+
+        if (index === -1) {
+            return res.status(404).json({ error: "Piloto no encontrado" });
+        }
+
+        teams.splice(index, 1); // Eliminar el piloto
+
+        fs.writeFile(teamsPath, JSON.stringify(teams, null, 2), (err) => {
+            if (err) return res.status(500).json({ error: "Error al guardar los cambios" });
+            res.status(200).json({ message: "Piloto eliminado correctamente" });
+        });
     });
 });
 
