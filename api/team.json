@@ -3,70 +3,70 @@
         "id": 1,
         "name": "Alpine",
         "country": 2,
-        "pilots": [11,19],
-        "imageUrl": "/img/teams/alpine-logo.avif"
+        "imageUrl": "/img/teams/alpine-logo.avif",
+        "color": "#0090FF"
     },
     {
         "id": 2,
         "name": "Haas",
         "country": 13,
-        "pilots": [9,13],
-        "imageUrl": "/img/teams/haas-logo.avif"
+        "imageUrl": "/img/teams/haas-logo.avif",
+        "color": "#FFFFFF"
     },
     {
         "id": 3,
         "name": "Mercedes",
         "country": 2,
-        "pilots": [4,6],
-        "imageUrl": "/img/teams/mercedes-logo.avif"
+        "imageUrl": "/img/teams/mercedes-logo.avif",
+        "color": "#00D2BE"
     },
     {
         "id": 4,
         "name": "Williams",
         "country": 2,
-        "pilots": [8,15],
-        "imageUrl": "/img/teams/williams-logo.avif"
+        "imageUrl": "/img/teams/williams-logo.avif",
+        "color": "#005AFF"
     },
     {
         "id": 5,
         "name": "Aston Martin",
         "country": 2,
-        "pilots": [10,17],
-        "imageUrl": "/img/teams/aston-martin-logo.avif"
+        "imageUrl": "/img/teams/aston-martin-logo.avif",
+        "color": "#006F62"
     },
     {
         "id": 6,
         "name": "Kick Sauber",
         "country": 14,
-        "pilots": [12,20],
-        "imageUrl": "/img/teams/kick-sauber-logo.avif"
+        "imageUrl": "/img/teams/kick-sauber-logo.avif",
+        "color": "#900000"
     },
     {
         "id": 7,
         "name": "Racing Bulls",
         "country": 5,
-        "pilots": [18,14],
-        "imageUrl": "/img/teams/racing-bulls-logo.avif"
+        "imageUrl": "/img/teams/racing-bulls-logo.avif",
+        "color": "#1E41FF"
     },
     {
         "id": 8,
         "name": "Ferrari",
         "country": 5,
-        "pilots": [5,7],
-        "imageUrl": "/img/teams/ferrari-logo.avif"
+        "imageUrl": "/img/teams/ferrari-logo.avif",
+        "color": "#DC0000"
     },
     {
         "id": 9,
         "name": "McLaren",
         "country": 2,
-        "pilots": [1,2],
-        "imageUrl": "/img/teams/mclaren-logo.avif"
+        "imageUrl": "/img/teams/mclaren-logo.avif",
+        "color": "#FF8000"
     },
     {
         "id": 10,
         "name": "Red Bull Racing",
         "country": 2,
-        "pilots": [3,16],
-        "imageUrl": "/img/teams/red-bull-racing-logo.avif"
+        "imageUrl": "/img/teams/red-bull-racing-logo.avif",
+        "color": "#0600EF"
     }
 ]

@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.static('public')); // Sirve archivos estáticos desde /public
 
 const driversPath = path.join(__dirname, 'api', 'driver.json');
+const vehiclesPath = path.join(__dirname, 'api', 'vehicle.json');
 const teamsPath = path.join(__dirname, 'api', 'team.json');
 const countriesPath = path.join(__dirname, 'api', 'country.json');
 
@@ -117,6 +118,13 @@ app.get('/api/countries', (req, res) => {
     });
 });
 
+app.get('/api/vehicles', (req, res) => {
+    fs.readFile(vehiclesPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+        res.json(JSON.parse(data));
+    });
+});
+
 // URLS
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'inicio.html'));
@@ -134,6 +142,10 @@ app.get('/drivers', (req, res) => {
 });
 app.get('/admin/drivers', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'admin-driver.html'));
+});
+
+app.get('/teams', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'teams.html'));
 });
 
 app.listen(PORT, () => {
