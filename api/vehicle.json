@@ -152,5 +152,19 @@
       "fuelConsumption": 2,
       "tireWear": 1
     }
+  },
+  {
+    "id": 12,
+    "name": "LANDON Cart",
+    "imageUrl": "/img/vehicles/default.jpg",
+    "powerUnit": 2,
+    "chassis": "LAN",
+    "pilot": 2,
+    "performanceSpecifications": {
+      "speedMax": 335,
+      "acceleration": 2.5,
+      "fuelConsumption": 2.1,
+      "tireWear": 2
+    }
   }
 ]

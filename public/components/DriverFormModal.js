@@ -9,15 +9,28 @@ class DriverFormModal extends HTMLElement {
         this.shadowRoot.innerHTML = `${style}<div class="modal"><p class="modal__loading">Cargando datos...</p></div>`;
 
         try {
-            const [countriesRes, teamsRes] = await Promise.all([
+            const [countriesRes, teamsRes, driversRes] = await Promise.all([
                 fetch("/api/countries"),
                 fetch("/api/teams"),
+                fetch("/api/drivers"),
             ]);
 
             const countries = await countriesRes.json();
             const teams = await teamsRes.json();
+            const drivers = await driversRes.json();
 
-            this.renderForm(countries, teams);
+            // Contar cuántos pilotos tiene cada equipo
+            const teamPilotCount = {};
+
+            drivers.forEach(driver => {
+                const teamId = driver.team;
+                teamPilotCount[teamId] = (teamPilotCount[teamId] || 0) + 1;
+            });
+
+            // Filtrar solo los equipos con menos de 2 pilotos
+            const availableTeams = teams.filter(team => (teamPilotCount[team.id] || 0) < 2);
+
+            this.renderForm(countries, availableTeams);
         } catch (error) {
             this.shadowRoot.innerHTML = `${style}<div class="modal"><p class="modal__error">Error cargando datos</p></div>`;
             console.error("Error al cargar JSON:", error);
@@ -35,7 +48,7 @@ class DriverFormModal extends HTMLElement {
             const modalTitle = modal.querySelector('.driver-form__title');
             const formEl = this.shadowRoot.querySelector("#driverForm");
             delete formEl.dataset.editId;
-            
+
             modalTitle.textContent = "Registrar Piloto";
 
             modal?.classList.add("active");

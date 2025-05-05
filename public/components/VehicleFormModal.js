@@ -9,15 +9,21 @@ class VehicleFormModal extends HTMLElement {
         this.shadowRoot.innerHTML = `${style}<div class="modal"><p class="modal__loading">Cargando datos...</p></div>`;
 
         try {
-            const [powerUnitsRes, driversRes] = await Promise.all([
+            const [powerUnitsRes, driversRes, vehiclesRes] = await Promise.all([
                 fetch("/api/power-unit"),
                 fetch("/api/drivers"),
+                fetch("/api/vehicles"),
             ]);
 
             const powerUnits = await powerUnitsRes.json();
             const drivers = await driversRes.json();
+            const vehicles = await vehiclesRes.json();
 
-            this.renderForm(powerUnits, drivers);
+            // Obtener ids de pilotos ya asignados a vehículos
+            const assignedPilotIds = vehicles.map(vehicle => vehicle.pilot);
+            // Filtrar drivers con los pilotos disponibles
+            const availableDrivers = drivers.filter(driver => !assignedPilotIds.includes(driver.id));
+            this.renderForm(powerUnits, availableDrivers);
         } catch (error) {
             this.shadowRoot.innerHTML = `${style}<div class="modal"><p class="modal__error">Error cargando datos</p></div>`;
             console.error("Error al cargar JSON:", error);

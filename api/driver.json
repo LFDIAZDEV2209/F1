@@ -208,5 +208,15 @@
     "driverNumber": 21,
     "country": 4,
     "points": 21
+  },
+  {
+    "id": 22,
+    "name": "Nicolas",
+    "lastName": "Campus",
+    "imageUrl": "/img/drivers/default.png",
+    "team": 11,
+    "driverNumber": 25,
+    "country": 14,
+    "points": 25
   }
 ]
