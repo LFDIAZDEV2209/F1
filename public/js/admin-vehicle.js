@@ -36,7 +36,7 @@ async function loadVehicles(query = "") {
 
       const card = document.createElement("admin-vehicle-card");
 
-        card.setAttribute("id", vehicle.id),
+      card.setAttribute("id", vehicle.id),
         card.setAttribute("name", vehicle.name),
         card.setAttribute("image-url", vehicle.imageUrl),
         card.setAttribute("power-unit", powerUnitData.name),
@@ -91,7 +91,7 @@ function updateComparisonBar() {
       const v2 = vehicle2[prop];
       let superior = '';
       let difference = 0;
-    
+
       if (v1 > v2) {
         superior = vehicle1.name;
         difference = (v1 - v2).toFixed(2); // Redondear la diferencia a 2 decimales
@@ -102,7 +102,7 @@ function updateComparisonBar() {
         superior = 'Ambos';
         difference = 0;
       }
-    
+
       return { superior, difference, v1, v2 };
     };
 
@@ -169,34 +169,50 @@ document.addEventListener("DOMContentLoaded", () => {
   loadVehicles();
 });
 document.addEventListener("edit-vehicle", async (e) => {
-    console.log("edit");
-    const vehicleId = parseInt(e.detail.vehicleId);
-  
-    const modalEl = document.querySelector("vehicle-form-modal");
-    const modal = modalEl.shadowRoot.querySelector(".modal");
-    const modalTitle = modal.querySelector('.vehicle-form__title');
-  
-    const vehicleRes = await fetch(`/api/vehicles/${vehicleId}`);
-    const vehicle = await vehicleRes.json();
-  
-    const form = modalEl.shadowRoot.querySelector("#vehicleForm");
-    form.querySelector('[name="name"]').value = vehicle.name;
-    form.querySelector('[name="power-unit"]').value = vehicle.powerUnit;
-    form.querySelector('[name="chassis"]').value = vehicle.chassis;
-    form.querySelector('[name="pilot"]').value = vehicle.pilot;
-    form.querySelector('[name="speed-max"]').value = vehicle.performanceSpecifications.speedMax;
-    form.querySelector('[name="acceleration"]').value = vehicle.performanceSpecifications.acceleration;
-    form.querySelector('[name="fuel-consumption"]').value = vehicle.performanceSpecifications.fuelConsumption;
-    form.querySelector('[name="tire-wear"]').value = vehicle.performanceSpecifications.tireWear;
-  
-    form.dataset.editId = vehicle.id;
-    modalTitle.textContent = "Editar Vehículo";
-    modal.classList.add("active");
-  });
-  
-  document.addEventListener("remove-vehicle", async (e) => {
-    console.log("remove");
-    const vehicleId = parseInt(e.detail.vehicleId);
-    const modalEl = document.querySelector("delete-vehicle-modal");
-    modalEl.show(vehicleId);
-  });
+  console.log("edit");
+  const vehicleId = parseInt(e.detail.vehicleId);
+
+  const modalEl = document.querySelector("vehicle-form-modal");
+  const modal = modalEl.shadowRoot.querySelector(".modal");
+  const modalTitle = modal.querySelector('.vehicle-form__title');
+
+  const vehicleRes = await fetch(`/api/vehicles/${vehicleId}`);
+  const vehicle = await vehicleRes.json();
+  const form = modalEl.shadowRoot.querySelector("#vehicleForm");
+
+  const pilotSelect = form.querySelector('[name="pilot"]');
+  const drivers = modalEl.drivers; // Recuperar los equipos desde la instancia de DriverFormModal
+  const currentOptionExists = [...pilotSelect.options].some(opt => parseInt(opt.value) === vehicle.pilot);
+
+  if (!currentOptionExists) {
+    const pilotRes = await fetch(`/api/drivers/${vehicle.pilot}`);
+    const pilot = await pilotRes.json();
+
+    const option = document.createElement("option");
+    option.value = pilot.id;
+    option.textContent = pilot.name;
+    pilotSelect.appendChild(option);
+
+    drivers.push(pilot);
+  }
+
+  form.querySelector('[name="name"]').value = vehicle.name;
+  form.querySelector('[name="power-unit"]').value = vehicle.powerUnit;
+  form.querySelector('[name="chassis"]').value = vehicle.chassis;
+  form.querySelector('[name="pilot"]').value = vehicle.pilot;
+  form.querySelector('[name="speed-max"]').value = vehicle.performanceSpecifications.speedMax;
+  form.querySelector('[name="acceleration"]').value = vehicle.performanceSpecifications.acceleration;
+  form.querySelector('[name="fuel-consumption"]').value = vehicle.performanceSpecifications.fuelConsumption;
+  form.querySelector('[name="tire-wear"]').value = vehicle.performanceSpecifications.tireWear;
+
+  form.dataset.editId = vehicle.id;
+  modalTitle.textContent = "Editar Vehículo";
+  modal.classList.add("active");
+});
+
+document.addEventListener("remove-vehicle", async (e) => {
+  console.log("remove");
+  const vehicleId = parseInt(e.detail.vehicleId);
+  const modalEl = document.querySelector("delete-vehicle-modal");
+  modalEl.show(vehicleId);
+});

@@ -23,7 +23,8 @@ class VehicleFormModal extends HTMLElement {
             const assignedPilotIds = vehicles.map(vehicle => vehicle.pilot);
             // Filtrar drivers con los pilotos disponibles
             const availableDrivers = drivers.filter(driver => !assignedPilotIds.includes(driver.id));
-            this.renderForm(powerUnits, availableDrivers);
+            this.drivers = availableDrivers;
+            this.renderForm(powerUnits, this.drivers);
         } catch (error) {
             this.shadowRoot.innerHTML = `${style}<div class="modal"><p class="modal__error">Error cargando datos</p></div>`;
             console.error("Error al cargar JSON:", error);
