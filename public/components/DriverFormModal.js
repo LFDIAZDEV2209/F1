@@ -29,8 +29,8 @@ class DriverFormModal extends HTMLElement {
 
             // Filtrar solo los equipos con menos de 2 pilotos
             const availableTeams = teams.filter(team => (teamPilotCount[team.id] || 0) < 2);
-
-            this.renderForm(countries, availableTeams);
+            this.teams = availableTeams
+            this.renderForm(countries, this.teams);
         } catch (error) {
             this.shadowRoot.innerHTML = `${style}<div class="modal"><p class="modal__error">Error cargando datos</p></div>`;
             console.error("Error al cargar JSON:", error);

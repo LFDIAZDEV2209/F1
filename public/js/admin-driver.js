@@ -87,6 +87,23 @@ document.addEventListener("edit-driver", async (e) => {
   const driver = await driverRes.json();
 
   const form = modalEl.shadowRoot.querySelector("#driverForm");
+
+  const teamSelect = form.querySelector('[name="team"]');
+  const teams = modalEl.teams; // Recuperar los equipos desde la instancia de DriverFormModal
+  const currentTeamExists = [...teamSelect.options].some(opt => parseInt(opt.value) === driver.team);
+
+  if (!currentTeamExists) {
+      const teamRes = await fetch(`/api/teams/${driver.team}`);
+      const team = await teamRes.json();
+
+      const option = document.createElement("option");
+      option.value = team.id;
+      option.textContent = team.name;
+      teamSelect.appendChild(option); // O usa prepend si prefieres que aparezca arriba
+
+      teams.push(team);
+  }
+
   form.querySelector('[name="name"]').value = driver.name;
   form.querySelector('[name="lastName"]').value = driver.lastName;
   form.querySelector('[name="driverNumber"]').value = driver.driverNumber;
