@@ -131,6 +131,7 @@ delete-circuits-modal{
 .driver-info__team {
   margin-top: 8px;
   color: #777;
+  color: red
 }
 
 .card__driver-image-container {
