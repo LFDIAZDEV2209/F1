@@ -181,11 +181,13 @@ document.addEventListener("edit-vehicle", async (e) => {
   
     const form = modalEl.shadowRoot.querySelector("#vehicleForm");
     form.querySelector('[name="name"]').value = vehicle.name;
-    form.querySelector('[name="lastName"]').value = vehicle.lastName;
-    form.querySelector('[name="vehicleNumber"]').value = vehicle.vehicleNumber;
-    form.querySelector('[name="points"]').value = vehicle.points;
-    form.querySelector('[name="country"]').value = vehicle.country;
-    form.querySelector('[name="team"]').value = vehicle.team;
+    form.querySelector('[name="power-unit"]').value = vehicle.powerUnit;
+    form.querySelector('[name="chassis"]').value = vehicle.chassis;
+    form.querySelector('[name="pilot"]').value = vehicle.pilot;
+    form.querySelector('[name="speed-max"]').value = vehicle.performanceSpecifications.speedMax;
+    form.querySelector('[name="acceleration"]').value = vehicle.performanceSpecifications.acceleration;
+    form.querySelector('[name="fuel-consumption"]').value = vehicle.performanceSpecifications.fuelConsumption;
+    form.querySelector('[name="tire-wear"]').value = vehicle.performanceSpecifications.tireWear;
   
     form.dataset.editId = vehicle.id;
     modalTitle.textContent = "Editar Vehículo";
