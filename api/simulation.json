@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Car Spotting",
+        "description": "Simulador de spotting de coches",
+        "url": "/img/Screenshot 2025-05-05 005255.png"
+    },
+    {
+        "id": 2,
+        "name": "Race Simulator",
+        "description": "Simulador de carreras F1",
+        "url": "/img/juego2.png"
+    }
+]

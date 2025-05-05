@@ -1,11 +1,11 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
+const express = require('express'); // Importo express
+const fs = require('fs'); // Importo fs funciona para manipular archivos
+const path = require('path'); // Para rutas
 
-const app = express();
-const PORT = 3000;
+const app = express(); // Inicializa express
+const PORT = 3000; // Puerto
 
-app.use(express.json());
+app.use(express.json()); // Para parsear json
 app.use(express.static('public')); // Sirve archivos estáticos desde /public
 
 const driversPath = path.join(__dirname, 'api', 'driver.json');
@@ -14,6 +14,7 @@ const teamsPath = path.join(__dirname, 'api', 'team.json');
 const countriesPath = path.join(__dirname, 'api', 'country.json');
 const powerUnitPath = path.join(__dirname, 'api', 'power-unit.json');
 const circuitsPath = path.join(__dirname, 'api', 'circuits.json');
+const simulationPath = path.join(__dirname, 'api', 'simulation.json');
 
 // GET: obtener todos los drivers
 app.get('/api/drivers', (req, res) => {
@@ -388,8 +389,12 @@ app.delete("/api/circuits/:id", (req, res) => {
     });
 });
 
-
-
+app.get('/api/simulation', (req, res) => {
+    fs.readFile(simulationPath, 'utf8', (err, data) => {
+        if (err) return res.status(500).json({ error: 'Error al leer los datos' });
+        res.json(JSON.parse(data));
+    });
+});
 
 // URLS
 app.get('/', (req, res) => {
@@ -429,6 +434,18 @@ app.get('/circuits', (req, res) => {
 app.get('/admin/circuits', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'admin-circuits.html'));
 });
+app.get('/simulation', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'simulation.html'));
+});
+
+app.get('/juego', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'juego.html'));
+});
+
+app.get('/juego2', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'juego2.html'));
+});
+
 app.listen(PORT, () => {
     console.log(`Servidor en http://localhost:${PORT}`);
 });
