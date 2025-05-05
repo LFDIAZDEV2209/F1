@@ -51,6 +51,7 @@ class DeleteCircuitsModal extends HTMLElement {
 
     show(circuitsId) {
         this.circuitsId = circuitsId;
+        console.log(this.shadowRoot.querySelector(".modal"))
         this.shadowRoot.querySelector(".modal").classList.add("active");
     }
 

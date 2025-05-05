@@ -16,8 +16,6 @@ class AdminCircuitCard extends HTMLElement {
             imageUrl: this.getAttribute("image-url"),
         };
 
-        console.log(data.curves)
-
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="/css/components/AdminCircuitsCard.css">
             <div class="circuit-card">

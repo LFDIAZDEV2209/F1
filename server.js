@@ -145,7 +145,7 @@ app.get('/api/circuits/:id', (req, res) => {
         const circuit = circuits.find(circuit => circuit.id === circuitId);
 
         if (!circuit) {
-            return res.status(404).json({ error: 'Piloto no encontrado' });
+            return res.status(404).json({ error: 'Circuito no encontrado' });
         }
 
         res.json(circuit);
@@ -182,7 +182,7 @@ app.put('/api/circuits/:id', (req, res) => {
         const index = circuits.findIndex(circuit => circuit.id === circuitId);
 
         if (index === -1) {
-            return res.status(404).json({ error: 'Piloto no encontrado' });
+            return res.status(404).json({ error: 'Circuito no encontrado' });
         }
 
         // Asegura que el ID no se sobrescriba accidentalmente
@@ -206,14 +206,14 @@ app.delete("/api/circuits/:id", (req, res) => {
       const index = circuits.findIndex((circuit) => circuit.id === circuitId);
   
       if (index === -1) {
-        return res.status(404).json({ error: "Piloto no encontrado" });
+        return res.status(404).json({ error: "Circuito no encontrado" });
       }
   
       circuits.splice(index, 1); // Eliminar el piloto
   
       fs.writeFile(circuitsPath, JSON.stringify(circuits, null, 2), (err) => {
         if (err) return res.status(500).json({ error: "Error al guardar los cambios" });
-        res.status(200).json({ message: "Piloto eliminado correctamente" });
+        res.status(200).json({ message: "Circuito eliminado correctamente" });
       });
     });
   });

@@ -76,29 +76,30 @@ async function loadCircuits(query = "") {
     console.log("edit");
     const circuitsId = parseInt(e.detail.circuitsId);
   
-    const modalEl = document.querySelector("circuits-form-modal");
+    const modalEl = document.querySelector("circuit-form-modal");
     const modal = modalEl.shadowRoot.querySelector(".modal");
-    const modalTitle = modal.querySelector('.circuits-form__title');
+    const modalTitle = modal.querySelector('.circuit-form__title');
   
-    const circuitsRes = await fetch(`/api/circuitss/${circuitsId}`);
+    const circuitsRes = await fetch(`/api/circuits/${circuitsId}`);
     const circuits = await circuitsRes.json();
   
-    const form = modalEl.shadowRoot.querySelector("#circuitsForm");
+    const form = modalEl.shadowRoot.querySelector("#circuitForm");
     form.querySelector('[name="name"]').value = circuits.name;
-    form.querySelector('[name="lastName"]').value = circuits.lastName;
-    form.querySelector('[name="circuitsNumber"]').value = circuits.circuitsNumber;
-    form.querySelector('[name="points"]').value = circuits.points;
     form.querySelector('[name="country"]').value = circuits.country;
-    form.querySelector('[name="team"]').value = circuits.team;
+    form.querySelector('[name="length"]').value = circuits.lengthKm;
+    form.querySelector('[name="laps"]').value = circuits.laps;
+    form.querySelector('[name="curves"]').value = circuits.curves.join(", ");
+    form.querySelector('[name="description"]').value = circuits.description;
   
     form.dataset.editId = circuits.id;
-    modalTitle.textContent = "Editar Piloto";
+    modalTitle.textContent = "Editar Circuito";
     modal.classList.add("active");
   });
   
   document.addEventListener("remove-circuits", async (e) => {
-    console.log("remove");
     const circuitsId = parseInt(e.detail.circuitsId);
     const modalEl = document.querySelector("delete-circuits-modal");
     modalEl.show(circuitsId);
   });
+
+window.loadCircuits = loadCircuits;

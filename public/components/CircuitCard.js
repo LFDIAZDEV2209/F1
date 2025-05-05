@@ -8,15 +8,12 @@ class CircuitCard extends HTMLElement {
         const data = {
             name: this.getAttribute("name"),
             country: this.getAttribute("country"),
-
             lengthKm: this.getAttribute("length"),
             laps: this.getAttribute("laps"),
             curves: this.getAttribute("curves"),
             description: this.getAttribute("description"),
             imageUrl: this.getAttribute("image-url"),
         };
-
-        console.log(data.curves)
 
         this.shadowRoot.innerHTML = `
             <link rel="stylesheet" href="/css/components/CircuitCard.css">
