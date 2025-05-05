@@ -154,16 +154,16 @@
     }
   },
   {
-    "id": 12,
-    "name": "LANDON Cart",
+    "id": 13,
+    "name": "NicoMovil",
     "imageUrl": "/img/vehicles/default.jpg",
-    "powerUnit": 2,
-    "chassis": "LAN",
-    "pilot": 2,
+    "powerUnit": 1,
+    "chassis": "NIC-25",
+    "pilot": 22,
     "performanceSpecifications": {
-      "speedMax": 335,
-      "acceleration": 2.5,
-      "fuelConsumption": 2.1,
+      "speedMax": 320,
+      "acceleration": 2,
+      "fuelConsumption": 3,
       "tireWear": 2
     }
   }

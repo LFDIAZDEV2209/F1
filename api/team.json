@@ -75,5 +75,12 @@
     "imageUrl": "/img/teams/default-logo.jpg",
     "country": 11,
     "color": "#000000"
+  },
+  {
+    "id": 12,
+    "name": "Equipo 2",
+    "imageUrl": "/img/teams/default-logo.jpg",
+    "country": 5,
+    "color": "#0627cb"
   }
 ]

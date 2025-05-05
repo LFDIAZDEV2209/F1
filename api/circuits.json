@@ -1,66 +1,129 @@
 [
-    {
-        "name": "Circuito de Mónaco",
-        "country": 15,
-        "lenghtKm": 3.34,
-        "laps": 78,
-        "curves": [0.7, 1.6, 2.4, 3.1],
-        "description":  "Uno de los circuitos más prestigiosos y difíciles del calendario, conocido por sus calles angostas y la falta de zonas de adelantamiento.",
-        "imageUrl": "/img/circuits/circuito-de-monaco.avif"
-    },
-    {
-        "name": "Silverstone",
-        "country": 2,
-        "lenghtKm": 5.89,
-        "laps": 52,
-        "curves": [1, 1.8, 2.7, 3.6, 4.5],
-        "description":  "Uno de los circuitos más rápidos del calendario, con curvas de alta velocidad como Maggotts y Becketts.",
-        "imageUrl": "/img/circuits/silverstone.jpg"
-    },
-    {
-        "name": "Circuito de Monza",
-        "country": 5,
-        "lenghtKm": 5.79,
-        "laps": 53,
-        "curves": [0.8, 2, 2.9, 3.5, 4.7, 5.2],
-        "description":  "Conocido como 'El Templo de la Velocidad', Monza es el circuito más rápido del calendario con largas rectas y chicanes icónicas.",
-        "imageUrl": "/img/circuits/silverstone.jpeg"
-    },
-    {
-        "name": "Suzuka",
-        "country": 11,
-        "lenghtKm": 5.81,
-        "laps": 53,
-        "curves": [1.2, 2.1, 2.9, 3.8, 4.4],
-        "description": "Famoso por su diseño en forma de ocho, Suzuka es uno de los favoritos de los pilotos, con curvas rápidas como 130R y la chicane Casio.",
-        "imageUrl": "/img/circuits/suzuka.jpeg"
-    },
-    {
-        "name": "Interlagos",
-        "country": 12,
-        "lenghtKm": 4.31,
-        "laps": 71,
-        "curves": [1.1, 2.0, 2.8, 3.6],
-        "description": "El Autódromo José Carlos Pace, en São Paulo, es famoso por sus cambios de elevación y emocionantes finales de campeonato.",
-        "imageUrl": "/img/circuits/interlagos.jpeg"
-    },
-    {
-        "name": "Circuit of the Americas",
-        "country": 13,
-        "lenghtKm": 5.51,
-        "laps": 56,
-        "curves": [1.3, 2.5, 3.4, 4.2, 5.1],
-        "description": "Ubicado en Austin, Texas, es conocido por sus secciones técnicas inspiradas en circuitos clásicos y su espectacular curva 1 en subida.",
-        "imageUrl": "/img/circuits/cota.jpg"
-    },
-    {
-        "name": "Circuit Gilles Villeneuve",
-        "country": 8,
-        
-        "lenghtKm": 4.36,
-        "laps": 70,
-        "curves": [1.0, 1.9, 2.7, 3.5, 4.6],
-        "description": "Situado en Montreal, es famoso por sus chicanes rápidas, largas rectas y el icónico 'Muro de los Campeones'.",
-        "imageUrl": "/img/circuits/gilles-villeneuve.jpg"
-    }
+  {
+    "id": 1,
+    "name": "Circuito de Mónaco",
+    "country": 15,
+    "lengthKm": 3.34,
+    "laps": 78,
+    "curves": [
+      0.7,
+      1.6,
+      2.4,
+      3.1
+    ],
+    "description": "Uno de los circuitos más prestigiosos y difíciles del calendario, conocido por sus calles angostas y la falta de zonas de adelantamiento.",
+    "imageUrl": "/img/circuits/circuito-de-monaco.avif"
+  },
+  {
+    "id": 2,
+    "name": "Silverstone",
+    "country": 2,
+    "lengthKm": 5.89,
+    "laps": 52,
+    "curves": [
+      1,
+      1.8,
+      2.7,
+      3.6,
+      4.5
+    ],
+    "description": "Uno de los circuitos más rápidos del calendario, con curvas de alta velocidad como Maggotts y Becketts.",
+    "imageUrl": "/img/circuits/silverstone.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Circuito de Monza",
+    "country": 5,
+    "lengthKm": 5.79,
+    "laps": 53,
+    "curves": [
+      0.8,
+      2,
+      2.9,
+      3.5,
+      4.7,
+      5.2
+    ],
+    "description": "Conocido como 'El Templo de la Velocidad', Monza es el circuito más rápido del calendario con largas rectas y chicanes icónicas.",
+    "imageUrl": "/img/circuits/circuito-de-monza.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Suzuka",
+    "country": 11,
+    "lengthKm": 5.81,
+    "laps": 53,
+    "curves": [
+      1.2,
+      2.1,
+      2.9,
+      3.8,
+      4.4
+    ],
+    "description": "Famoso por su diseño en forma de ocho, Suzuka es uno de los favoritos de los pilotos, con curvas rápidas como 130R y la chicane Casio.",
+    "imageUrl": "/img/circuits/suzuka.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Interlagos",
+    "country": 12,
+    "lengthKm": 4.31,
+    "laps": 71,
+    "curves": [
+      1.1,
+      2,
+      2.8,
+      3.6
+    ],
+    "description": "El Autódromo José Carlos Pace, en São Paulo, es famoso por sus cambios de elevación y emocionantes finales de campeonato.",
+    "imageUrl": "/img/circuits/interlagos.jpeg"
+  },
+  {
+    "id": 6,
+    "name": "Circuit of the Americas",
+    "country": 13,
+    "lengthKm": 5.51,
+    "laps": 56,
+    "curves": [
+      1.3,
+      2.5,
+      3.4,
+      4.2,
+      5.1
+    ],
+    "description": "Ubicado en Austin, Texas, es conocido por sus secciones técnicas inspiradas en circuitos clásicos y su espectacular curva 1 en subida.",
+    "imageUrl": "/img/circuits/cota.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Circuit Gilles Villeneuve",
+    "country": 8,
+    "lengthKm": 4.36,
+    "laps": 70,
+    "curves": [
+      1,
+      1.9,
+      2.7,
+      3.5,
+      4.6
+    ],
+    "description": "Situado en Montreal, es famoso por sus chicanes rápidas, largas rectas y el icónico 'Muro de los Campeones'.",
+    "imageUrl": "/img/circuits/gilles-villeneuve.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Meli Circuit",
+    "country": 2,
+    "lengthKm": 300,
+    "laps": 100,
+    "curves": [
+      1,
+      2,
+      3.5,
+      7.8,
+      100
+    ],
+    "description": "El Meli super circuito definitivo",
+    "imageUrl": "/img/circuits/default.webp"
+  }
 ]

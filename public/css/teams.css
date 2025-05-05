@@ -37,6 +37,11 @@ body {
   min-height: 100vh;
 }
 
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .app-container__main-header {
   background-color: var(--secondary-color);
   padding: 15px 30px;
