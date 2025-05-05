@@ -34,7 +34,7 @@ async function loadVehicles(query = "") {
       const driverData = driversData.find((driver) => driver.id === vehicle.pilot);
       const teamData = driverData ? teamsData.find((team) => team.id === driverData.team) : null;
     
-      const card = document.createElement("admin-vehicle-card");
+      const card = document.createElement("vehicle-card");
     
       card.setAttribute("id", vehicle.id);
       card.setAttribute("name", vehicle.name);

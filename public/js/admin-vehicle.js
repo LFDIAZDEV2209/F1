@@ -32,23 +32,23 @@ async function loadVehicles(query = "") {
     filteredVehicles.forEach((vehicle) => {
       const powerUnitData = powerUnitsData.find((powerUnit) => powerUnit.id === vehicle.powerUnit);
       const driverData = driversData.find((driver) => driver.id === vehicle.pilot);
-      const teamData = teamsData.find((team) => team.id === driverData.team);
+      const teamData = driverData ? teamsData.find((team) => team.id === driverData.team) : null;
 
       const card = document.createElement("admin-vehicle-card");
 
-      card.setAttribute("id", vehicle.id),
-        card.setAttribute("name", vehicle.name),
-        card.setAttribute("image-url", vehicle.imageUrl),
-        card.setAttribute("power-unit", powerUnitData.name),
-        card.setAttribute("chassis", vehicle.chassis),
-        card.setAttribute("pilot", driverData.name + ' ' + driverData.lastName),
-        card.setAttribute("team", teamData.name),
-        card.setAttribute("speed-max", vehicle.performanceSpecifications.speedMax),
-        card.setAttribute("acceleration", vehicle.performanceSpecifications.acceleration),
-        card.setAttribute("fuel-consumption", vehicle.performanceSpecifications.fuelConsumption),
-        card.setAttribute("tire-wear", vehicle.performanceSpecifications.tireWear),
+      card.setAttribute("id", vehicle.id);
+      card.setAttribute("name", vehicle.name);
+      card.setAttribute("image-url", vehicle.imageUrl);
+      card.setAttribute("power-unit", powerUnitData?.name || "Sin datos");
+      card.setAttribute("chassis", vehicle.chassis);
+      card.setAttribute("pilot", driverData ? `${driverData.name} ${driverData.lastName}` : "Sin piloto");
+      card.setAttribute("team", teamData ? teamData.name : "Sin equipo");
+      card.setAttribute("speed-max", vehicle.performanceSpecifications.speedMax);
+      card.setAttribute("acceleration", vehicle.performanceSpecifications.acceleration);
+      card.setAttribute("fuel-consumption", vehicle.performanceSpecifications.fuelConsumption);
+      card.setAttribute("tire-wear", vehicle.performanceSpecifications.tireWear);
 
-        card.addEventListener('compare', (event) => handleCompare(event));
+      card.addEventListener("compare", (event) => handleCompare(event));
 
       container.appendChild(card);
     });
